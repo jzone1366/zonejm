@@ -21,40 +21,77 @@
 </head>
 <body>
 	<!-- Navigation for Mobile (all for now) -->
-	<nav class="top-bar" data-topbar>
-		<ul class="title-area">
-			<li class="name">
-				<h1><a href="#">JMZ</a></h1>
-			</li>
-			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-		</ul>
-		<section class="top-bar-section">
-			<ul class="left">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Education</a></li>
-				<li><a href="#">Experience</a></li>
-				<li><a href="#">Skills</a></li>
+	<div class="fixed contain-to-grid">
+		<nav class="top-bar" data-topbar>
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="#">JMZ</a></h1>
+				</li>
+				<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 			</ul>
-		</section>
-	</nav> <!-- End Navigation -->
-	
+			<section class="top-bar-section">
+				<ul class="left">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Experience</a></li>
+					<li><a href="#">Skills</a></li>
+				</ul>
+			</section>
+		</nav> <!-- End Navigation -->
+	</div>
 	<!-- About Section -->
-	<div class="about row">
-		<div class="small-12 columns">
-			<h2> Joshua M. Zone </h2>
-			<h3> Associate Engineer </h3>
-			<h4> Albany Area </h4>
-			<p> 
-				Hey There! I'm Joshua Zone. I recently received my Bachelor of Science in <a href="http://www.rpi.edu/dept/IT/"> Information Technology &amp; Web Science </a> program at <a href="http://www.rpi.edu">Rensselaer Polytechnic Institute</a>
-			</p>
-			<p>
-				I enjoy all things web. I continue my education by learning new technologies and enhancing my skills. I take a simplistic, yet elegant approach to design and believe strongly in accessibility.
-				When I'm not developing, I enjoy shooting photography, hiking, and exercising. 
-			</p>
+	<div id="about">
+		<div class="row">
+			<div class="small-12 columns">
+				<h2> Joshua M. Zone </h2>
+				<h3> Associate Engineer </h3>
+				<h4> Albany, NY</h4>
+				<p> 
+					Hey There! I'm Joshua Zone. I recently received my Bachelor of Science in <a href="http://www.rpi.edu/dept/IT/"> Information Technology &amp; Web Science </a> from <a href="http://www.rpi.edu">Rensselaer Polytechnic Institute</a>.
+					I have also obtained an Associate of Science in <a href="https://www.hvcc.edu/bus/css/index.html">Computer Information Systems</a> from <a href="hvcc.edu">Hudson Valley Community College</a>. 
+				</p>
+				<p>
+					I enjoy all things web. I continue my education by learning new technologies and enhancing my skills. I take a simplistic, yet elegant approach to design and believe strongly in accessibility.
+					When I'm not developing, I enjoy shooting photography, hiking, and exercising. 
+				</p>
+			</div>
 		</div>
 	</div>
-	
+	<!-- Experience Section -->	
+	<div id="experience">
+		<div class="row">
+			<div class="small-12 medium-6 large-6 columns">
+				<h4> <a href="http://www.virtusa.com" target="blank"> Virtusa </a></h4>
+				<h5> Associate Engineer </h5>
+				<p>
+					<span class="radius label"> J2EE </span> 
+					<span class="radius label"> HTML5 </span>
+					<span class="radius label"> CSS </span>
+					<span class="radius label"> JS </span>
+				</p>
+			</div>
+			
+			<div class="small-12 medium-6 large-6 columns">
+				<h4> <a href="http://www.v3bigdata.com" target="blank" >Currier McCabe &amp; Associates </a></h4>
+				<h5> Computer Systems Engineer </h5>
+				<p>
+					<span class="radius label"> LINUX </span>
+					<span class="radius label"> HTML5 </span>
+					<span class="radius label"> CSS </span>
+					<span class="radius label"> JS </span>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+	<footer>
+		<div class="row">
+			<div class="small-12 columns">
+				<p class="left"> &copy; Joshua M. Zone <small>All rights reserved. </small></p>
+				<p class="right"> <a href="#about">top </a></p>
+			</div>
+		</div>
+	</footer>
 	<!-- Foundation javascript files including jquery -->
 	<script src="resources/js/vendor/jquery.js"></script>
 	<script src="resources/js/foundation.min.js"></script>
