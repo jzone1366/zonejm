@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html class="lt-ie10" lang="en"><![endif]-->
+
 <html class="no-js" lang="en">
 <head>
 	<meta name="author" content="Joshua M. Zone">
@@ -13,6 +14,9 @@
 	<!-- Foundation css files -->
 	<link rel="stylesheet" href="resources/css/normalize.css">
 	<link rel="stylesheet" href="resources/css/foundation.min.css">
+	
+	<!-- Flipper Effect CSS -->
+	<link rel="stylesheet" href="resources/css/flipper.css">
 	
 	<!-- App specific css files -->
 	<link rel="stylesheet" href="resources/css/app.css">
@@ -39,6 +43,7 @@
 			</section>
 		</nav> <!-- End Navigation -->
 	</div>
+	
 	<!-- About Section -->
 	<div id="about">
 		<div class="row">
@@ -51,43 +56,141 @@
 					I have also obtained an Associate of Science in <a href="https://www.hvcc.edu/bus/css/index.html">Computer Information Systems</a> from <a href="hvcc.edu">Hudson Valley Community College</a>. 
 				</p>
 				<p>
-					I enjoy all things web. I continue my education by learning new technologies and enhancing my skills. I take a simplistic, yet elegant approach to design and believe strongly in accessibility.
+					I enjoy all things web. I continue my education by learning new technologies and enhancing my skills. I take a simplistic, yet elegant approach to design and believe strongly in accessibility and responsive design.
 					When I'm not developing, I enjoy shooting photography, hiking, and exercising. 
 				</p>
 			</div>
 		</div>
 	</div>
+	<!-- End About Section -->
+	
 	<!-- Experience Section -->	
 	<div id="experience">
-		<div class="row">
-			<div class="small-12 medium-6 large-6 columns">
-				<h4> <a href="http://www.virtusa.com" target="blank"> Virtusa </a></h4>
-				<h5> Associate Engineer </h5>
-				<p>
-					<span class="radius label"> J2EE </span> 
-					<span class="radius label"> HTML5 </span>
-					<span class="radius label"> CSS </span>
-					<span class="radius label"> JS </span>
-				</p>
+		<div class="row" data-equalizer>
+			<div class="small-12 medium-12 large-4 columns" data-equalizer-watch>
+				<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+					<div class="flipper">
+						<div class="front">
+							<div class="panel radius" data-equalizer-watch>
+								<h5 class="text-center"> Virtusa </h5>
+								<h6 class="text-center"> Associate Engineer </h6>
+								<p class="text-center">
+									<span class="radius label"> J2EE </span>
+									<span class="radius label"> HTML5 </span>
+									<span class="radius label"> CSS </span>
+									<span class="radius label"> JS </span>
+								</p>
+							</div>
+						</div>
+						
+						<div class="back">
+							<div class="panel radius" data-equalizer-watch>
+								<p class="text-center"> 
+									As an Associate Engineer at Virtusa Corporation, I am assigned to projects using many different technologies.
+									Each project is contract based and has a target end date for different clients. 
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			
-			<div class="small-12 medium-6 large-6 columns">
-				<h4> <a href="http://www.v3bigdata.com" target="blank" >Currier McCabe &amp; Associates </a></h4>
-				<h5> Computer Systems Engineer </h5>
-				<p>
-					<span class="radius label"> LINUX </span>
-					<span class="radius label"> HTML5 </span>
-					<span class="radius label"> CSS </span>
-					<span class="radius label"> JS </span>
-				</p>
+			<div class="small-12 medium-12 large-4 columns" data-equalizer-watch>
+				<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+					<div class="flipper">
+						<div class="front">
+							<div class="panel radius" data-equalizer-watch>
+								<h5 class="text-center"> Currier McCabe &amp; Associates </h5>
+								<h6 class="text-center"> Computer Systems Engineer </h6>
+								<p class="text-center">
+									<span class="radius label"> LINUX </span>
+									<span class="radius label"> HTML5 </span>
+									<span class="radius label"> CSS </span>
+									<span class="radius label"> JS </span>
+								</p>
+							</div>
+						</div>
+						<div class="back">
+							<div class="panel radius" data-equalizer-watch>
+								<p class="text-center">
+									Responsibilities included: Architecting Solutions, Linux Administration, and developing a web presence for a new product.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="small-12 medium-12 large-4 columns" data-equalizer-watch>
+				<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+					<div class="flipper">
+						<div class="front">
+							<div class="panel radius" data-equalizer-watch>
+								<h5 class="text-center"> Tetherless World Constellation </h5>
+								<h6 class="text-center"> Student Researcher </h6>
+								<p class="text-center">
+									<span class="radius label"> PHP </span>
+									<span class="radius label"> DRUPAL </span>
+									<span class="radius label"> HTML5 </span>
+									<span class="radius label"> CSS </span>
+									<span class="radius label"> JS </span>
+								</p>
+							</div>
+						</div>
+						
+						<div class="back">
+							<div class="panel radius" data-equalizer-watch>
+								<p class="text-center">
+									Responsibilities included: Commenting currently existing PHP code, Modularize PHP Drupal modules, Add graphs and visualizations to SPARQL Data.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+	<!-- End Experience Section -->
+	<br />
+	
+	<!-- Skills Section -->
+	<div id="skills">
+		<div class="row">
+			<div class="small-12 medium-offset-2 medium-10 large-offset-2 large-10 columns">
+				<strong>HTML/5 <strong>
+				<div class="progress medium-10 large-10">
+					<span class="meter" style="width: 85%">
+				</div>
+				<strong> CSS/3 </strong>
+				<div class="progress medium-10 large-10">
+					<span class="meter" style="width: 75%">
+				</div>
+				<strong> JS/JQuery </strong>
+				<div class="progress medium-10 large-10">
+					<span class="meter" style="width: 80%">
+				</div>
+				<strong> JAVA </strong>
+				<div class="progress medium-10 large-10">
+					<span class="meter" style="width: 60%">
+				</div>
+				<strong> PHP </strong>
+				<div class="progress medium-10 large-10">
+					<span class="meter" style="width: 70%">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Skills Section -->
+	
+	<!-- Project Section -->
+	
+	<!-- End Project Section -->
+	
 	<!-- Footer -->
 	<footer>
 		<div class="row">
 			<div class="small-12 columns">
-				<p class="left"> &copy; Joshua M. Zone <small>All rights reserved. </small></p>
+				<p class="left"> 2014 &copy; Joshua M. Zone <small>All rights reserved. </small></p>
 				<p class="right"> <a href="#about">top </a></p>
 			</div>
 		</div>
