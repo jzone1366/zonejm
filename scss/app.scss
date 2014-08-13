@@ -1,0 +1,48 @@
+@import "settings";
+@import "foundation";
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script|);
+
+.social-icon {
+	color: $primary-color;
+	font-size: 2.3em;
+}
+
+.social-icon:hover {
+	color: $hover-color;
+	transform: scale(1.2);
+}
+
+.icon-styles {
+	list-style-type: none;
+	text-align: center;
+}
+
+.icon-styles > li {
+	display: inline-block;
+	padding-left: 2px;
+}
+#about, #experience, #skills, footer {
+	margin-top: $section-margin;
+}
+
+footer {
+	background-color: $primary-color;
+	color: #000000;
+	font-weight: normal;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+footer a {
+	color: #000000;
+}
+footer a:hover {
+	color: #FFFFFF;
+}
+
+#about h1 {
+	font-family: $google-font;
+}
+
+li.name h1 {
+	font-family: $google-font;
+}

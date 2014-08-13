@@ -1,0 +1,35 @@
+// Color Variables
+$primary-color: 	#26D48E;
+$secondary-color: 	#8CF9FF;
+$hover-color: mix($primary-color, #000, 50%);
+$section-margin: 50px;
+
+$google-font: 'Dancing Script', cursive;
+
+//Body Globals
+$body-bg: #000000;
+$body-font-color: #FFF;
+
+// Top Bar Properties
+$topbar-bg: 	$primary-color;
+$topbar-link-color: 	#000;
+$topbar-link-color-hover: #FFF;
+$topbar-link-color-active: #FFF;
+$topbar-link-color-active-hover: #FFF;
+$topbar-link-bg-color-hover: #000;
+$topbar-link-bg-hover: $hover-color;
+$topbar-link-weight: bold;
+
+//Top Bar Dropdown Properties
+$topbar-dropdown-bg: $primary-color;
+$topbar-dropdown-link-color: #FFF;
+$topbar-dropdown-link-bg: #333;
+
+//Top Bar Menu Properties
+$topbar-menu-link-color: #000;
+$topbar-menu-icon-color: #000;
+$topbar-menu-link-color-toggled: #FFF;
+$topbar-menu-icon-color-toggled: #FFF;
+
+//Header Properties
+$header-font-color:  $primary-color;
