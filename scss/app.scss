@@ -1,6 +1,5 @@
 @import "settings";
 @import "foundation";
-@import url(http://fonts.googleapis.com/css?family=Dancing+Script|);
 
 // Or selectively include components
 // @import
@@ -93,6 +92,10 @@ footer a:hover {
 	margin-bottom: 50px;
 }
 
+#about p {
+	font-size: rem-calc(18);
+}
+
 li.name h1 {
 	font-family: $google-font;
 }
@@ -111,8 +114,8 @@ li.name h1 {
 }
 
 .flip-container, .front, .back {
-	width: 320px;
-	height: 160px;
+	width: 300px;
+	height: 180px;
 }
 
 .flipper {
