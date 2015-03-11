@@ -11,19 +11,19 @@
     <link rel="stylesheet" href="css/app.css" />
 
     <script src="bower_components/modernizr/modernizr.js"></script>
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 			
-		ga('create', 'UA-54006221-1', 'auto');
-		ga('send', 'pageview');
-</script>
+		  ga('create', 'UA-54006221-1', 'auto');
+		  ga('send', 'pageview');
+    </script>
   </head>
   <body>
     <!-- Navigation for Mobile (all for now) -->
-    <div class="fixed contain-to-grid">
+    <header>
       <nav class="top-bar" data-topbar data-options="scrolltop: false">
         <ul class="title-area">
           <li class="name">
@@ -39,10 +39,10 @@
           </ul>
         </section>
       </nav> <!-- End Navigation -->
-    </div>
+    </header>
     
-    <!-- About Section -->
-    <div id="about">
+    <!-- Contact Section -->
+    <div id="contact">
       <div class="row">
         <div class="small-12 text-center">
           <h1> Joshua M. Zone </h1>
@@ -59,6 +59,11 @@
           </ul>
         </div>
       </div>
+     </div>
+     <!-- End Contact Section -->
+     
+     <!-- About Section -->
+     <div id="about">
       <div class="row">
         <div class="small-12 columns">
           <p> 
@@ -77,75 +82,95 @@
   
     <!-- Experience Section --> 
     <div id="experience">
-      <div class="row" data-equalizer>
-        <div class="small-12 small-centered medium-8 large-4 large-uncentered columns" data-equalizer-watch>
-          <div class="panel radius" data-equalizer-watch>
-            <h5 class="text-center"> Virtusa </h5>
-            <h6 class="text-center"> Associate Engineer </h6>
-            <p class="text-center">
-              <span class="skill-label"> J2EE </span>
-              <span class="skill-label"> HTML5 </span>
-              <span class="skill-label"> CSS </span>
-              <span class="skill-label"> JS </span>
-            </p>
+      <div class="row">
+        <div class="content">
+          <div class="small-12 small-centered medium-8 large-4 large-uncentered columns">
+            <div class="panel radius">
+              <h4 class="text-center"> Virtusa </h4>
+              <h5 class="text-center"> <em>Associate Engineer </em></h5>
+              <p class="text-center">
+                <span class="skill-label"> J2EE </span>
+                <span class="skill-label"> HTML5 </span>
+                <span class="skill-label"> CSS </span>
+                <span class="skill-label"> JS </span>
+                <span class="skill-label"> AngularJS</span>
+              </p>
+              <p class="text-center">
+                Work remotely for a client based in New York City to debug and enhance a production application that is used in real time by Bond Traders.
+                The application is built on a Java (J2EE) backend using Spring/Hibernate and an AngularJS Front end that uses other tools such as underscore.js,
+                require.js, and GruntJS to build. Bugs and Enhancements were handled using JIRA for ticketing and tracking. 
+              </p>
+            </div>
           </div>
-        </div>
       
-        <div class="small-12 small-centered medium-8 large-4 large-uncentered columns" data-equalizer-watch>
-          <div class="panel radius" data-equalizer-watch>
-            <h5 class="text-center"> Currier McCabe &amp; Associates </h5>
-            <h6 class="text-center"> Computer Systems Engineer </h6>
-            <p class="text-center">
-              <span class="skill-label"> LINUX </span>
-              <span class="skill-label"> HTML5 </span>
-              <span class="skill-label"> CSS </span>
-              <span class="skill-label"> JS </span>
-            </p>
+          <div class="small-12 small-centered medium-8 large-4 large-uncentered columns">
+            <div class="panel radius" >
+              <h4 class="text-center"> Currier McCabe &amp; Associates </h4>
+              <h5 class="text-center"> <em> Computer Systems Engineer  </em></h5>
+              <p class="text-center">
+                <span class="skill-label"> LINUX </span>
+                <span class="skill-label"> PHP </span>
+                <span class="skill-label"> HTML5 </span>
+                <span class="skill-label"> CSS </span>
+                <span class="skill-label"> JS </span>
+              </p>
+              <p class="text-center">
+                Worked to develop an online presence for a new product launch. 
+                Architected and developed and PHP based Product site to add to the currently existing site.
+                Enhanced and updated the company site to add accessibility and modernize the site. 
+                Technologies include, Twitter Bootstrap, PHP, and MySQL for database storage. 
+              </p>
+            </div>
           </div>
-        </div>
                 
-        <div class="small-12 small-centered medium-8 large-4 columns large-uncentered" data-equalizer-watch>
-          <div class="panel radius" data-equalizer-watch>
-            <h5 class="text-center"> Tetherless World Constellation </h5>
-            <h6 class="text-center"> Student Researcher </h6>
-            <p class="text-center">
-              <span class="skill-label"> PHP </span>
-              <span class="skill-label"> DRUPAL </span>
-              <span class="skill-label"> HTML5 </span>
-              <span class="skill-label"> CSS </span>
-              <span class="skill-label"> JS </span>
-            </p>
+          <div class="small-12 small-centered medium-8 large-4 columns large-uncentered">
+            <div class="panel radius">
+              <h4 class="text-center"> Tetherless World Constellation </h4>
+              <h5 class="text-center"> <em> Undergrad Researcher </em></h5>
+              <p class="text-center">
+                <span class="skill-label"> PHP </span>
+                <span class="skill-label"> DRUPAL </span>
+                <span class="skill-label"> HTML5 </span>
+                <span class="skill-label"> CSS </span>
+                <span class="skill-label"> JS </span>
+              </p>
+              <p class="text-center">
+                As an undergrad researcher I was tasked with enhancing a Drupal based web site. Worked on commenting and modularizing existing functionality
+                to be more usable by the Drupal Community. The site was built on Drupal using PHP, as well as various frontend technologies. 
+              </p>
+            </div>
           </div>
         </div>  
       </div>
     </div>
     <!-- End Experience Section -->
-    <br />
     
     <!-- Skills Section -->
     <div id="skills">
       <div class="row">
         <div class="small-12 medium-offset-2 medium-10 large-offset-2 large-10 columns">
-          <strong>HTML/5 <strong>
-          <div class="progress medium-10 large-10">
-            <span class="meter" style="width: 85%">
-          </div>
-          <strong> CSS/3 </strong>
-          <div class="progress medium-10 large-10">
-            <span class="meter" style="width: 75%">
-          </div>
-          <strong> JS/JQuery </strong>
-          <div class="progress medium-10 large-10">
-            <span class="meter" style="width: 80%">
-          </div>
-          <strong> JAVA </strong>
-          <div class="progress medium-10 large-10">
-            <span class="meter" style="width: 60%">
-          </div>
-          <strong> PHP </strong>
-          <div class="progress medium-10 large-10">
-            <span class="meter" style="width: 70%">
-          </div>
+           <div class="content">
+              <strong>HTML/5 </strong>
+              <div class="progress medium-10 large-10">
+                 <span class="meter" style="width: 85%"></span>
+              </div>
+              <strong> CSS/3 </strong>
+              <div class="progress medium-10 large-10">
+                 <span class="meter" style="width: 75%"></span>
+              </div>
+              <strong> JS/JQuery </strong>
+              <div class="progress medium-10 large-10">
+                 <span class="meter" style="width: 80%"></span>
+              </div>
+              <strong> JAVA </strong>
+              <div class="progress medium-10 large-10">
+                 <span class="meter" style="width: 65%"></span>
+              </div>
+              <strong> PHP </strong>
+              <div class="progress medium-10 large-10">
+                 <span class="meter" style="width: 50%"></span>
+              </div>
+           </div>
         </div>
       </div>
     </div>

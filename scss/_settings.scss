@@ -10,29 +10,37 @@
     font-style: normal;
 
 }
+//header
+$header-height: 40px;
 
 //Column Breaks
 $small-range: (0em, 30em) !default;
 $medium-range: (30.063em, 64em) !default;
 
 // Color Variables
-$primary-color: 	#26D48E;
-$secondary-color: 	#8CF9FF;
+$primary-color: mix(#000000, #FFFFFF, 80%);
+$blue-color: #0000CC;
+$red-color: #990000;
+$green-color: #33CC33;
+$secondary-color: #8CF9FF;
 $hover-color: mix($primary-color, #000, 50%);
+
+//Section Variables
 $section-margin: 50px;
+$section-padding: 30px;
 
 $font-face: 'Dancing Script', cursive;
 
 //Body Globals
-$body-bg: #000000;
-$body-font-color: #FFF;
+$body-bg: #330099;
+$body-font-color: #000000;
 
 // Top Bar Properties
 $topbar-bg: 	$primary-color;
-$topbar-link-color: 	#000;
-$topbar-link-color-hover: #FFF;
-$topbar-link-color-active: #FFF;
-$topbar-link-color-active-hover: #FFF;
+$topbar-link-color: 	#FFFFFF;
+$topbar-link-color-hover: mix(#FFFFFF, #000000, 80%);
+$topbar-link-color-active: mix(#FFFFFF, #000000, 80%);
+$topbar-link-color-active-hover: mix(#FFFFFF, #000000, 80%);
 $topbar-link-bg-color-hover: #000;
 $topbar-link-bg-hover: $hover-color;
 $topbar-link-weight: bold;
@@ -43,10 +51,13 @@ $topbar-dropdown-link-color: #FFF;
 $topbar-dropdown-link-bg: #333;
 
 //Top Bar Menu Properties
-$topbar-menu-link-color: #000;
-$topbar-menu-icon-color: #000;
-$topbar-menu-link-color-toggled: #FFF;
-$topbar-menu-icon-color-toggled: #FFF;
+$topbar-menu-link-color: #FFFFFF;
+$topbar-menu-icon-color: #FFFFFF;
+$topbar-menu-link-color-toggled: #000000;
+$topbar-menu-icon-color-toggled: #000000;
 
 //Header Properties
-$header-font-color:  $primary-color;
+$header-font-color:  #FFFFFF;
+
+//Progress Bars
+$progress-meter-color: $green-color;
