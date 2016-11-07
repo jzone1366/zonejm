@@ -1,10 +1,25 @@
 {
-  "name": "foundation-libsass-template",
-  "version": "0.0.1",
-  "devDependencies": {
-    "node-sass": "*",
-    "grunt": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-sass": "*"
-  }
+    "name": "zonejm.com",
+    "version": "1.0.0",
+    "description": "Curriculum Vitae site hosted on zonejm.com",
+    "main": "index.js",
+    "dependencies": {
+        "grunt": "^1.0.1"
+    },
+    "devDependencies": {
+        "eslint": "^3.4.0",
+        "grunt-bowercopy": "^1.2.4",
+        "grunt-contrib-clean": "^1.0.0",
+        "grunt-contrib-connect": "^1.0.2",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^2.0.0",
+        "grunt-contrib-watch": "^1.0.0",
+        "grunt-sass": "^1.2.1",
+        "jit-grunt": "^0.10.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "zonejm",
+    "license": "ISC"
 }
