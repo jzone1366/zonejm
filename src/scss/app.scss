@@ -73,13 +73,12 @@ header {
 //CONTACT STYLES
 #contact {
    color: #FFFFFF;
-}
-#contact h1 {
-	font-family: $font-face;
-}
-
-#contact ul {
-	margin-top: 20px;
+	 h1 {
+		 	font-family: $font-face;
+	 }
+	 ul {
+		margin-top: 20px;
+	 }
 }
 
 .social-icon {
@@ -103,20 +102,17 @@ header {
 }
 
 //ABOUT STYLES
-#about p {
-	font-size: rem-calc(22);
-}
-
 #about {
    background-color: #FF9900;
-}
-
-#about p:first-of-type {
-   padding-top: $section-padding;
-}
-
-#about p:last-of-type {
-   padding-bottom: $section-padding;
+	 p {
+		 font-size: rem-calc(22);
+	 }
+	 p:first-of-type {
+		 padding-top: $section-padding;
+	 }
+	 p:last-of-type {
+		 padding-bottom: $section-padding;
+	 }
 }
 
 //EXPERIENCE STYLES
@@ -141,12 +137,10 @@ footer {
 	font-weight: normal;
 	padding-top: 5px;
 	padding-bottom: 5px;
-}
-
-footer a {
-	color: #FFFFFF;
-}
-
-footer a:hover {
-	color: #000000;
+	a {
+		color: #FFFFFF;
+	}
+	a:hover {
+		color: #000000;
+	}
 }

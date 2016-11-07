@@ -6,7 +6,8 @@ module.exports = {
     files: {
       'jquery.min.js': 'jquery/dist/jquery.min.js',
       'jquery.min.map': 'jquery/dist/jquery.min.map',
-      'foundation.min.js': 'foundation/js/foundation.min.js'
+      'foundation.min.js': 'foundation/js/foundation.min.js',
+      'modernizr.js': 'modernizr/modernizr.js'
     }
   },
   fonts: {
