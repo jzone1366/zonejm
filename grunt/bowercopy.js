@@ -1,13 +1,20 @@
 module.exports = {
-  external: {
+  javascript: {
     options: {
       destPrefix: 'dist/js/external'
     },
     files: {
       'jquery.min.js': 'jquery/dist/jquery.min.js',
       'jquery.min.map': 'jquery/dist/jquery.min.map',
-      'foundation.min.js': 'foundation/js/foundation.min.js',
-      'modernizr.js': 'modernizr/modernizr.js'
+      'bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js'
+    }
+  },
+  css: {
+    options: {
+      destPrefix: 'dist/css/external'
+    },
+    files: {
+      'normalize.css': 'normalize-css/normalize.css'
     }
   },
   fonts: {

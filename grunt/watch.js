@@ -7,8 +7,8 @@ module.exports = {
     files: ['src/index.html'],
     tasks: ['copy']
   },
-  sass: {
-    files: ['src/sass/**/*.scss'],
-    tasks: ['sass']
+  less: {
+    files: ['src/less/**/*.less'],
+    tasks: ['less:dev']
   }
 };

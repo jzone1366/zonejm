@@ -1,0 +1,63 @@
+@import "bootstrap.less";
+@import "font-awesome/less/font-awesome.less";
+@import "_variables.less";
+@import "_navbar.less";
+
+header {
+  background-image: url('../resources/images/blurredVegas.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+section {
+  padding-top: 85px;
+  padding-bottom: 55px;
+}
+
+section#social {
+  color: #FFFFFF;
+  padding-top: 125px;
+  h1 {
+    font-size: 6rem;
+    color: @accent-color;
+    text-shadow: 2px 2px black;
+  }
+  h2 {
+    font-size: 4rem;
+    text-shadow: 2px 2px black;
+  }
+  div.icons {
+    margin-top: 40px;
+    font-size: 4rem;
+    padding-bottom: 75px;
+    a {
+      color: rgba(255, 255, 255, .5);
+      i:hover {
+        transform: scale(1.5);
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}
+
+section#about {
+  border-top: 2px solid @accent-color;
+  h1 {
+    margin-bottom: 75px;
+  }
+  p {
+    margin-top: 20px;
+    min-height: 200px; 
+    font-size: 2rem;
+  }
+}
+
+section#skills {
+  background-color: darken(white, 10%);
+  h1 {
+    margin-bottom: 75px;
+  }
+  img {
+    margin-bottom: 75px;
+  }
+}

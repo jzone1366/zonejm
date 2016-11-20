@@ -1,4 +1,12 @@
 module.exports = {
+  dev: {
+    options: {
+      sourceMap: true
+    },
+    files: {
+      'dist/js/app.built.js': ['src/js/**/*.js']
+    }
+  },
   app: {
     options: {
       mangle: true,
@@ -6,7 +14,7 @@ module.exports = {
       sourceMap: true
     },
     files: {
-      'dist/js/app.js': ['src/js/**/*.js']
+      'dist/js/app.built.js': ['src/js/**/*.js']
     }
   }
 };
