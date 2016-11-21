@@ -3,15 +3,27 @@
 @import "_variables.less";
 @import "_navbar.less";
 
+body {
+  position: relative;
+}
+
 header {
   background-image: url('../resources/images/blurredVegas.jpg');
-  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-attachment:fixed;
 }
 
 section {
   padding-top: 85px;
-  padding-bottom: 55px;
+  padding-bottom: 85px;
+}
+
+.label-primary {
+  color: black;
 }
 
 section#social {
@@ -42,7 +54,9 @@ section#social {
 
 section#about {
   border-top: 2px solid @accent-color;
+  border-bottom: 2px solid @accent-color;
   h1 {
+    color: black;
     margin-bottom: 75px;
   }
   p {
@@ -52,12 +66,43 @@ section#about {
   }
 }
 
+section#portfolio {
+  background-image: url('../resources/images/blurredVegas.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-attachment:fixed;
+  h1 {
+    color: @accent-color;
+    text-shadow: 2px 2px black;
+    margin-bottom: 75px;
+  }
+  .label-default {
+    font-size: 12px;
+    float: right;
+  }
+}
+
 section#skills {
+  border-top: 2px solid @accent-color;
+  border-bottom: 2px solid @accent-color;
   background-color: darken(white, 10%);
   h1 {
+    color: black;
     margin-bottom: 75px;
   }
   img {
     margin-bottom: 75px;
+  }
+}
+
+footer {
+  height: 100px;
+  background-color: black;
+  p {
+    padding-top: 40px;
+    color: white;
   }
 }

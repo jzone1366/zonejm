@@ -21,6 +21,10 @@
     "less-plugin-clean-css": "^1.5.1"
   },
   "scripts": {
+    "install-deps": "bower install && npm install",
+    "install-dev": "install-deps && run-app-dev",
+    "run-app-dev": "grunt run-app-dev",
+    "build": "install-deps && grunt build-prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "zonejm",

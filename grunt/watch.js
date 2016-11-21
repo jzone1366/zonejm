@@ -10,5 +10,9 @@ module.exports = {
   less: {
     files: ['src/less/**/*.less'],
     tasks: ['less:dev']
+  },
+  javascript: {
+    files: ['src/js/**/*.js'],
+    tasks: ['uglify:dev']
   }
 };
