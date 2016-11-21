@@ -1,0 +1,108 @@
+@import "bootstrap.less";
+@import "font-awesome/less/font-awesome.less";
+@import "_variables.less";
+@import "_navbar.less";
+
+body {
+  position: relative;
+}
+
+header {
+  background-image: url('../resources/images/blurredVegas.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-attachment:fixed;
+}
+
+section {
+  padding-top: 85px;
+  padding-bottom: 85px;
+}
+
+.label-primary {
+  color: black;
+}
+
+section#social {
+  color: #FFFFFF;
+  padding-top: 125px;
+  h1 {
+    font-size: 6rem;
+    color: @accent-color;
+    text-shadow: 2px 2px black;
+  }
+  h2 {
+    font-size: 4rem;
+    text-shadow: 2px 2px black;
+  }
+  div.icons {
+    margin-top: 40px;
+    font-size: 4rem;
+    padding-bottom: 75px;
+    a {
+      color: rgba(255, 255, 255, .5);
+      i:hover {
+        transform: scale(1.5);
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}
+
+section#about {
+  border-top: 2px solid @accent-color;
+  border-bottom: 2px solid @accent-color;
+  h1 {
+    color: black;
+    margin-bottom: 75px;
+  }
+  p {
+    margin-top: 20px;
+    min-height: 200px; 
+    font-size: 2rem;
+  }
+}
+
+section#portfolio {
+  background-image: url('../resources/images/blurredVegas.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-attachment:fixed;
+  h1 {
+    color: @accent-color;
+    text-shadow: 2px 2px black;
+    margin-bottom: 75px;
+  }
+  .label-default {
+    font-size: 12px;
+    float: right;
+  }
+}
+
+section#skills {
+  border-top: 2px solid @accent-color;
+  border-bottom: 2px solid @accent-color;
+  background-color: darken(white, 10%);
+  h1 {
+    color: black;
+    margin-bottom: 75px;
+  }
+  img {
+    margin-bottom: 75px;
+  }
+}
+
+footer {
+  height: 100px;
+  background-color: black;
+  p {
+    padding-top: 40px;
+    color: white;
+  }
+}
