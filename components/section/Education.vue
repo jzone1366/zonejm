@@ -16,9 +16,7 @@ const educations = [{
                 itemscope
                 v-for="education in educations"
                 itemtype="https://schema.org/EducationalOrganization"
-                class="bg-white hover:bg-gray-50 border hover:scale-[.98] transition duration-300 p-6 rounded-xl">
-
-
+                class="bg-white border hover:scale-[1.05] transition duration-300 p-6 rounded-xl">
                 <div class="flex gap-3">
                     <img :src="'/schools/' + education.logo"
                          height="120"

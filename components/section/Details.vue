@@ -11,6 +11,12 @@
                 </NuxtLink>
             </li>
             <li>
+                <a href="/resume.pdf"
+                    download
+                    class="flex items-center gap-2 hover:translate-x-2 transition duration-300 print:hidden">
+                    <Icon icon="carbon:document-download" class="w-5 h-5 inline-flex" :ssr="true" />Resume</a>
+            </li>
+            <li>
                 <span
                     class="flex items-center gap-2 hover:translate-x-2 transition duration-300"
                     itemscope
