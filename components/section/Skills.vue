@@ -18,6 +18,7 @@ const skills  = [
     {"name": "Golang", "icon": "go" },
     {"name": "Java", "icon": "java" },
     {"name": "JavaScript", "icon": "javascript"},
+    {"name": "TypeScript", "icon": "typescript"},
     {"name": "Php", "icon": "php" },
     {"name": "React", "icon": "react"},
     {"name": "Vite", "icon": "vite"},
