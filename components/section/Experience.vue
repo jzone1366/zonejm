@@ -63,9 +63,9 @@ const experiences = [
     logo: "nathanjames_logo.jpeg",
   },
   {
-    company: "Pricespider",
+    company: "PriceSpider",
     period: "Jan 2019 - Dec 2020",
-    position: "Frontend Web Developer",
+    position: "Lead Software Engineer",
     tasks: [
       "Led a cross functional development team to support 16+ services in production.",
       "Increase availability by 30%.",
