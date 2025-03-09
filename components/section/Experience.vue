@@ -2,114 +2,119 @@
 const experiences = [
   {
     company: "QL2 Software",
-    period: "Mar 2024 - Present",
+    period: "2024 - Present",
     position: "Director of Engineering",
+    description: "Elevate engineering expertise by orchestrating comprehensive training and collaborative working sessions on core systems. Strengthen monitoring and alerting by deploying InfluxDB and Grafana.",
     tasks: [
-      "Increase system stability by improving cloud architecture.",
-      "Improve monitoring of all systems by implementing metrics.",
-      "Implemented a micoservice architecture in Kubernetes and Go using Kafka."
+        "Reduced ingestion costs by 20% by transforming the data ingestion pipeline into cloud-native microservice architecture.",
+        "Enhanced ingestion success by 10% through the creation of advanced ingestion tool.",
+        "Lowered cloud expenses by over 50% by refining cloud infrastructure for greater efficiency.",
+        "Accelerated processing speed by 75% through reengineering multiple aspects of the pipeline.",
+        "Improved storage SAN system resiliency, achieving 45% performance boost and reducing latency by over 50%.",
+        "Built real-time monitoring pipeline with Snowflake and Python, ensuring high data accuracy and quality.",
     ],
     skills: ["Java", "K8s", "Python", "Postgres"], //Figure out how to show these... chips?
     logo: "ql2_logo.jpeg",
   },
   {
     company: "TealBook",
-    period: "Mar 2023 - Mar 2024",
+    period: "2023 - 2024",
     position: "Software Engineering Manager",
+    description: "Drove the end-to-end development of greenfield data portal, ensuring scalable architecture and seamless implementation. Built high-performance GraphQL API, streamlining access to complex datasets for faster data retrieval.",
     tasks: [
-      "Lead Cross Functional team to improve Customer Portal.",
-      "Improve Data access by implementing graphql API."
+        "Shortened delivery cycles by over 75% through process optimization and enhanced product management strategies.",
+        "Cut cloud costs by 45% by restructuring data ingestion architecture for efficiency and scalability.",
+        "Slashed average delivery time by over 30% by optimizing the SDLC workflow for efficiency and scalability.",
+        "Boosted customer engagement by 60% through the development of enhanced user interface using React.",
     ],
     logo: "tealbook_logo.jpeg",
   },
   {
     company: "SigFig",
-    period: "Nov 2022 - Mar 2023",
+    period: "2022 - 2023",
     position: "Senior Software Engineer",
+    description: "Accelerated feature development for cutting-edge finance product by collaborating with small team of engineers. Improved usability by swiftly refining feature sets within small Pods. Managed code reviews, ensuring high-quality standards and maintaining code integrity.",
     tasks: [
-      "Worked on a rapidly adapting emerging product.",
-      "Restructure application for easier iteration."
+        "Transformed the React application into a modular component library, enabling client customization via configs and enhancing user engagement.",
     ],
     logo: "sigfig_logo.jpeg",
   },
   {
     company: "Nathan James",
-    period: "May 2022 - Nov 2022",
+    period: "2020 - 2021, 2022 - 2022",
     position: "Lead Software Engineer",
+    description: "Spearhead engineering initiatives to streamline business operations through scalable automation and real-time data processing. Enhance ERP efficiency with API-driven solutions and optimize logistics with intelligent barcode scanning integrations.",
     tasks: [
-      "Developed a Warehouse Management System from scratch.",
-      "Improved Enterprise Resource Planning Software to focus on Automation."
+        "Enhanced ERP automation and invoicing efficiency by developing a robust API-driven ERP system.",
+        "Optimized warehouse package processing by implementing real-time barcode scanning with camera hardware.",
     ],
     logo: "nathanjames_logo.jpeg",
   },
   {
     company: "PlayVS",
-    period: "Nov 2021 - May 2022",
+    period: "2021 - 2022",
     position: "Senior Software Engineer",
+    description: "Standardized UI with custom component library, aligning with product design. Strengthened team expertise by refining GraphQL API design and best practices. Enhanced processes by establishing engineering standards and mentoring teams.",
     tasks: [
-      "Improved System performance by 25%.",
-      "Improved User Engagement by adding newly requested features."
+        "Maximized loading speed by 45%+ through advanced GraphQL caching strategies.",
+        "Accelerated UI feature delivery by 30% by collaborating with the Design Team to implement company-wide design system",
     ],
     logo: "playvs_logo.jpeg",
   },
   {
-    company: "Nathan James",
-    period: "Dec 2020 - Nov 2021",
-    position: "Lead Software Engineer",
-    tasks: [
-      "Developed a Warehouse Management System from scratch.",
-      "Improved Enterprise Resource Planning Software to focus on Automation."
-    ],
-    logo: "nathanjames_logo.jpeg",
-  },
-  {
     company: "PriceSpider",
-    period: "Jan 2019 - Dec 2020",
+    period: "2019 - 2020",
     position: "Lead Software Engineer",
+    description: "Lead engineering efforts to optimize microservices and enhance system scalability, ensuring high-performance B2C experiences. Drive data pipeline efficiency, reliability, and accuracy through cloud-native architectures, proactive monitoring, and cross-system data integration.",
     tasks: [
-      "Led a cross functional development team to support 16+ services in production.",
-      "Increase availability by 30%.",
-      "Decrease Time to First Byte by 45%."
+        "Optimized 15+ microservices, enhancing B2C widget performance and data pipeline efficiency.",
+        "Boosted data ingestion rates 30%+ by redesigning microservices for cloud-native scalability.",
+        "Streamlined data mapping across three systems, ensuring accuracy with data stewards.",
+        "Reinforced infrastructure, increasing reliability and reducing incidents by 40%+.",
+        "Deployed system-wide metrics, identifying inefficiencies and driving continuous improvements.",
     ],
     logo: "pricespider_logo.jpeg",
   },
   {
     company: "Cognizant",
-    period: "Sep 2018 - Jan 2019",
+    period: "2018 - 2019",
     position: "Frontend Web Developer",
+    description: "Enhanced onboarding process by implementing efficient new user flow, optimizing frontend development for smoother user experiences. Collaborated with design teams to innovate and improve user interfaces, ensuring alignment with brand guidelines and user needs. Applied debugging skills to resolve performance issues, consistently maintaining and updating web applications for optimal efficiency and user satisfaction.",
     tasks: [
-      "Develop Consumer based frontend application using React.",
-      "Enhance the User Experience and API's.",
+        "Visualized Flu patterns across the U.S. by implementing interactive D3.js map using collected temperature data.",
+        "Enabled seamless research access by developing a centralized Data Portal for collected data.",
+        "Directed all frontend strategy in collaboration with the VP of Engineering, ensuring optimal technical decisions and execution.",
     ],
     logo: "softvision_logo.jpeg",
   },
   {
     company: "Reflex Media",
-    period: "Jun 2017 - Sep 2018",
+    period: "2017 - 2018",
     position: "Web Application Developer",
+    description: "Ensured unified web and mobile experience by spearheading the comprehensive redesign of multiple social platforms, using React and React Native. Optimized release cadence by migrating legacy applications to a modern tech stack.",
     tasks: [
-      "Tasked with rebuilding the UI on React and Native App on React Native.",
-      "Worked with Product to enhance the User Experience.",
+        "Enhanced in-app communication by 50% through the implementation of a real-time user chat experience.",
     ],
     logo: "reflexmedia.jpeg",
   },
   {
     company: "Vegas.com",
-    period: "Oct 2016 - Jun 2017",
+    period: "2016 - 2017",
     position: "Web Developer",
+    description: "Drive product optimization and user engagement through data-driven experimentation and modern frontend architectures. Enhance performance and conversion rates by deploying A/B testing tools and migrating legacy applications to scalable, React-based solutions.",
     tasks: [
-      "Implemented successful A/B tests.",
-      "Successfully migrated a Java app to a React App.",
+        "Boosted conversion rates by over 40% via deployment of A/B testing tools.",
+        "Led the migration of a legacy Java application to a modern architecture by developing a scalable Java API and React-based frontend, enhancing performance, maintainability, and user experience.",
     ],
     logo: "vegas_com_logo.jpeg",
   },
   {
     company: "Virtusa|Polaris",
-    period: "Jun 2014 - Oct 2016",
+    period: "2014 - 2016",
     position: "Web Development Consultant",
+    description: "Architect and develop high-performance, real-time systems that empower data-driven decision-making. Deliver scalable solutions for financial applications, ensuring speed, reliability, and seamless user experience.",
     tasks: [
-      "Worked on heavily used real time data platform for Bond Traders.",
-      "Became SME on Frontend Application using AngularJS.",
+        "Delivered real-time, data-intensive application enabling Bond Traders to make informed decisions by architecting and developing high-performance system under contract with Morgan Stanley.",
     ],
     logo: "virtusa_logo.jpg",
   },
@@ -141,9 +146,10 @@ const experiences = [
             }}</span>
           </div>
         </div>
-        <div class="prose-sm prose" itemprop="hasOccupation" itemscope itemtype="http://schema.org/Occupation">
+        <div itemprop="hasOccupation" itemscope itemtype="http://schema.org/Occupation">
+          <p class="font-semibold mb-2"> {{ experience.description }} </p>
           <ul>
-            <li v-for="task in experience.tasks" itemprop="skills">{{ task }}</li>
+            <li v-for="task in experience.tasks" itemprop="skills" class="list-inside list-disc">{{ task }}</li>
           </ul>
         </div>
       </li>
