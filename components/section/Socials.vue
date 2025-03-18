@@ -17,6 +17,13 @@
                     <Icon icon="simple-icons:linkedin" class="w-5 h-5 inline-flex" :ssr="true" /> in/zonejm
                 </NuxtLink>
             </li>
+            <li>
+                <NuxtLink to="https://www.kaggle.com/zonejm"
+                          class="flex items-center gap-2 hover:translate-x-2 transition duration-300"
+                          itemprop="sameAs">
+                    <Icon icon="simple-icons:kaggle" class="w-5 h-5 inline-flex" :ssr="true" /> kaggle/zonejm
+                </NuxtLink>
+            </li>
 
         </ul>
     </section>
