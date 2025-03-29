@@ -7,7 +7,7 @@
                     to="https://github.com/jzone1366"
                     class="flex items-center gap-2 hover:translate-x-2 transition duration-300"
                     itemprop="sameAs">
-                     <Icon icon="simple-icons:github" class="w-5 h-5 inline-flex" :ssr="true" /> gh/zonejm
+                     <Icon icon="simple-icons:github" class="w-5 h-5 inline-flex" :ssr="true" /> gh/jzone1366
                 </NuxtLink>
             </li>
             <li>
