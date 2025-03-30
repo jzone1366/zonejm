@@ -10,20 +10,20 @@ const educations = [{
 
 <template>
   <div>
-    <div class="flex items-center gap-3 mb-6">
+    <div class="flex items-center gap-3 mb-8">
       <h2 class="text-2xl font-bold text-gray-900">Education</h2>
       <div class="flex-grow border-t border-gray-200"></div>
     </div>
 
     <div class="space-y-6">
       <div v-for="education in educations"
-          class="group relative bg-white rounded-xl border border-gray-200/75 p-6 hover:border-blue-500/50 hover:shadow-lg transition-all duration-300"
+          class="group relative bg-white rounded-2xl border border-gray-200/75 p-8 hover:border-blue-500/50 hover:shadow-sm transition-all duration-200"
           itemscope 
           itemtype="https://schema.org/EducationalOrganization">
         <!-- Institution Header -->
         <div class="flex items-start gap-4">
           <div class="relative">
-            <div class="w-12 h-12 rounded-lg bg-gray-50 p-2 flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors">
+            <div class="w-12 h-12 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors">
               <img :src="'/schools/' + education.logo"
                    :alt="`${education.institution}'s logo'`"
                    class="w-full h-full object-contain">

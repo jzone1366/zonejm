@@ -1,5 +1,6 @@
 <script setup>
 import { Icon } from '@iconify/vue'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 
 const experiences = [
   {
@@ -46,7 +47,7 @@ const experiences = [
   },
   {
     company: "Nathan James",
-    period: "2020 - 2021, 2022 - 2022",
+    period: "2020 - 2022",
     position: "Lead Software Engineer",
     description: "Spearhead engineering initiatives to streamline business operations through scalable automation and real-time data processing. Enhance ERP efficiency with API-driven solutions and optimize logistics with intelligent barcode scanning integrations.",
     tasks: [
@@ -133,66 +134,76 @@ const experiences = [
 
 <template>
   <div>
-    <div class="flex items-center gap-3 mb-6">
+    <div class="flex items-center gap-3 mb-8">
       <h2 class="text-2xl font-bold text-gray-900">Experience</h2>
       <div class="flex-grow border-t border-gray-200"></div>
     </div>
 
     <div class="space-y-6">
-      <div v-for="experience in experiences" 
-          class="group relative bg-white rounded-xl border border-gray-200/75 p-6 hover:border-blue-500/50 hover:shadow-lg transition-all duration-300" 
+      <Disclosure v-for="(experience, index) in experiences" 
+          :key="experience.company"
+          :defaultOpen="index === 0"
+          class="group relative bg-white rounded-2xl border border-gray-200/75 hover:border-blue-500/50 hover:shadow-sm transition-all duration-200"
           itemscope 
           itemtype="http://schema.org/OrganizationRole">
-        <!-- Company Header -->
-        <div class="flex items-start gap-4 mb-4">
-          <div class="relative">
-            <div class="w-12 h-12 rounded-lg bg-gray-50 p-2 flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors">
-              <img
-                :src="'/companies/' + experience.logo"
-                :alt="`${experience.company}'s logo'`"
-                itemprop="image"
-                class="w-full h-full object-contain"
-              />
+        <div class="p-8">
+          <!-- Company Header -->
+          <div class="flex items-start gap-4 mb-4">
+            <div class="relative">
+              <div class="w-12 h-12 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors">
+                <img
+                  :src="'/companies/' + experience.logo"
+                  :alt="`${experience.company}'s logo'`"
+                  itemprop="image"
+                  class="w-full h-full object-contain"
+                />
+              </div>
             </div>
-          </div>
-          <div class="flex-grow min-w-0">
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
-              <h3 class="text-lg font-semibold text-gray-900" itemprop="memberOf" itemscope itemtype="http://schema.org/Organization">
-                <span itemprop="name">{{ experience.company }}</span>
-              </h3>
-              <span class="inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700" itemprop="startDate">
-                {{ experience.period }}
+            <div class="flex-grow min-w-0">
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                <h3 class="text-lg font-semibold text-gray-900" itemprop="memberOf" itemscope itemtype="http://schema.org/Organization">
+                  <span itemprop="name">{{ experience.company }}</span>
+                </h3>
+                <span class="inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700" itemprop="startDate">
+                  {{ experience.period }}
+                </span>
+              </div>
+              <span itemprop="roleName" class="block text-blue-600 font-medium">
+                {{ experience.position }}
               </span>
             </div>
-            <span itemprop="roleName" class="block text-blue-600 font-medium">
-              {{ experience.position }}
-            </span>
+            <DisclosureButton class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition-all duration-200">
+              <span>View Details</span>
+              <Icon icon="heroicons:chevron-down" class="w-4 h-4 transform transition-transform duration-200 ui-open:rotate-180" />
+            </DisclosureButton>
           </div>
-        </div>
 
-        <!-- Description -->
-        <div itemprop="hasOccupation" itemscope itemtype="http://schema.org/Occupation">
-          <p class="text-gray-600 mb-4 leading-relaxed">{{ experience.description }}</p>
-          
-          <!-- Achievements -->
-          <div class="space-y-2.5 mb-4">
-            <div v-for="task in experience.tasks" 
-                itemprop="skills" 
-                class="relative pl-5 text-gray-700">
-              <div class="absolute left-0 top-[0.6rem] w-1.5 h-1.5 rounded-full bg-gray-300"></div>
-              <span class="leading-relaxed">{{ task }}</span>
+          <!-- Description -->
+          <div itemprop="hasOccupation" itemscope itemtype="http://schema.org/Occupation">
+            <p class="text-gray-600 mb-4 leading-relaxed">{{ experience.description }}</p>
+            
+            <!-- Skills Tags (Always visible) -->
+            <div v-if="experience.skills" class="flex flex-wrap gap-2 mb-4">
+              <span v-for="skill in experience.skills" 
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
+                {{ skill }}
+              </span>
             </div>
-          </div>
-
-          <!-- Skills Tags -->
-          <div v-if="experience.skills" class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-100">
-            <span v-for="skill in experience.skills" 
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
-              {{ skill }}
-            </span>
+            
+            <DisclosurePanel class="pt-4 border-t border-gray-100">
+              <!-- Achievements -->
+              <div class="space-y-2.5">
+                <div v-for="task in experience.tasks" 
+                    itemprop="skills" 
+                    class="relative pl-5 text-gray-700">
+                  <div class="absolute left-0 top-[0.6rem] w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+                  <span class="leading-relaxed">{{ task }}</span>
+                </div>
+              </div>
+            </DisclosurePanel>
           </div>
         </div>
-      </div>
+      </Disclosure>
     </div>
   </div>
 </template>

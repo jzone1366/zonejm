@@ -1,9 +1,9 @@
 <template>
-    <div class="space-y-3">
+    <div class="space-y-4">
         <h3 class="text-sm font-medium text-gray-900 uppercase tracking-wider">Skills</h3>
-        <div class="flex flex-wrap gap-3">
+        <div class="flex flex-wrap gap-2.5">
             <div v-for="skill in skills"
-                class="group flex items-center gap-3 px-4 py-2 bg-gray-50 border border-gray-100 rounded-xl hover:bg-white hover:border-gray-200 hover:shadow-sm transition-all duration-300"
+                class="group flex items-center gap-2.5 px-3 py-2 bg-gray-50 border border-gray-100 rounded-xl hover:bg-white hover:border-gray-200 hover:shadow-sm transition-all duration-200"
                 itemprop="knowsAbout">
                 <Icon 
                     :icon="skill.icon" 
