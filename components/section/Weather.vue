@@ -1,3 +1,4 @@
+<!--
 <template>
 	<div class="flex flex-col items-center p-8 rounded-md w-60 sm:px-12 dark:bg-gray-50 dark:text-gray-800">
 		<div class="text-center">
@@ -13,12 +14,18 @@
 </template>
 
 <script setup>
-const config = useRuntimeConfig()
-console.log(config.public.functionBaseUrl)
-
-const res = await fetch(`${config.public.functionBaseUrl}/.netlify/functions/weather`)
-const data = await res.json()
-const thisDate = new Date(data.location.localtime)
-const formattedDate = thisDate.toLocaleString('default', { month: 'short', day: '2-digit'})
-
+//const config = useRuntimeConfig()
+//console.log(config.public.functionBaseUrl)
+//
+//const res = await fetch(`${config.public.functionBaseUrl}/.netlify/functions/weather`)
+//const data = await res.json()
+//const thisDate = new Date(data.location.localtime)
+//const formattedDate = thisDate.toLocaleString('default', { month: 'short', day: '2-digit'})
+//
 </script>
+-->
+
+<!-- Placeholder empty template to prevent Vue errors -->
+<template>
+  <div></div>
+</template>
