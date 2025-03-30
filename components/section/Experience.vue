@@ -14,7 +14,7 @@ const experiences = [
       "Developed and deployed an advanced ingestion tool, improving success rate by 10%.",
       "Enhanced incident management processes, reducing downtime and increasing system reliability.",
     ],
-    skills: ["Java", "K8s", "Python", "Postgres"], //Figure out how to show these... chips?
+    skills: ["Java", "K8s", "Python", "Postgres", "Go", "MongoDB", "AWS", "React", "JavaScript"],
     logo: "ql2_logo.jpeg",
   },
   {
@@ -29,6 +29,7 @@ const experiences = [
       "Accelerated development cycles by 75% by refining Agile workflows.",
       "Led and mentored a team of engineers, fostering collaboration and technical excellence.",
     ],
+    skills: ["K8s", "Python", "Postgres", "React", "JavaScript", "Nest.js"],
     logo: "tealbook_logo.jpeg",
   },
   {
@@ -40,6 +41,7 @@ const experiences = [
       "Enhanced financial product usability by designing modular React components for improved customization.",
       "Increased feature delivery speed by 30% through agile sprints and streamlined deployment.",
     ],
+    skills: ["PHP", "Laravel", "React", "Postgres"],
     logo: "sigfig_logo.jpeg",
   },
   {
@@ -51,6 +53,7 @@ const experiences = [
       "Developed and delivered an API-driven ERP system, automating invoicing & business operations.",
       "Integrated real-time barcode scanning, optimizing warehouse management workflows.",
     ],
+    skills: ["PHP", "Laravel", "Vue.js", "Postgres"],
     logo: "nathanjames_logo.jpeg",
   },
   {
@@ -62,6 +65,7 @@ const experiences = [
       "Improved client-side GraphQL caching, reducing page load times by 45%.",
       "Developed company-wide design systems, ensuring UI/UX consistency across applications.",
     ],
+    skills: ["Nodejs", "Postgres", "React", "GraphQL", "TypeScript"],
     logo: "playvs_logo.jpeg",
   },
   {
@@ -74,6 +78,7 @@ const experiences = [
       "Migrated data pipelines to a RabbitMQ-based system, increasing processing efficiency.",
       "Directed AWS cloud migration, improving infrastructure scalability and cost efficiency.",
     ],
+    skills: ["C#", "React", "Go", "JavaScript", "MySQL", "PHP", ".Net", "CSS"],
     logo: "pricespider_logo.jpeg",
   },
   {
@@ -86,6 +91,7 @@ const experiences = [
         "Enabled seamless research access by developing a centralized Data Portal for collected data.",
         "Directed all frontend strategy in collaboration with the VP of Engineering, ensuring optimal technical decisions and execution.",
     ],
+    skills: ["Node.js", "JavaScript", "React", "CSS"],
     logo: "softvision_logo.jpeg",
   },
   {
@@ -96,6 +102,7 @@ const experiences = [
     tasks: [
         "Enhanced in-app communication by 50% through the implementation of a real-time user chat experience.",
     ],
+    skills: ["PHP", "JavaScript", "React", "CSS"],
     logo: "reflexmedia.jpeg",
   },
   {
@@ -107,6 +114,7 @@ const experiences = [
         "Boosted conversion rates by over 40% via deployment of A/B testing tools.",
         "Led the migration of a legacy Java application to a modern architecture by developing a scalable Java API and React-based frontend, enhancing performance, maintainability, and user experience.",
     ],
+    skills: ["Java", "JavaScript", "React", "CSS"],
     logo: "vegas_com_logo.jpeg",
   },
   {
@@ -117,6 +125,7 @@ const experiences = [
     tasks: [
         "Delivered real-time, data-intensive application enabling Bond Traders to make informed decisions by architecting and developing high-performance system under contract with Morgan Stanley.",
     ],
+    skills: ["Java", "JavaScript", "Angular.js", "CSS"],
     logo: "virtusa_logo.jpg",
   },
 ];
