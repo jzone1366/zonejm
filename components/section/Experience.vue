@@ -1,4 +1,7 @@
 <script setup>
+import { Icon } from '@iconify/vue'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
+
 const experiences = [
   {
     company: "QL2 Software",
@@ -12,7 +15,7 @@ const experiences = [
       "Developed and deployed an advanced ingestion tool, improving success rate by 10%.",
       "Enhanced incident management processes, reducing downtime and increasing system reliability.",
     ],
-    skills: ["Java", "K8s", "Python", "Postgres"], //Figure out how to show these... chips?
+    skills: ["Java", "K8s", "Python", "Postgres", "Go", "MongoDB", "AWS", "React", "JavaScript"],
     logo: "ql2_logo.jpeg",
   },
   {
@@ -27,6 +30,7 @@ const experiences = [
       "Accelerated development cycles by 75% by refining Agile workflows.",
       "Led and mentored a team of engineers, fostering collaboration and technical excellence.",
     ],
+    skills: ["K8s", "Python", "Postgres", "React", "JavaScript", "Nest.js"],
     logo: "tealbook_logo.jpeg",
   },
   {
@@ -38,17 +42,19 @@ const experiences = [
       "Enhanced financial product usability by designing modular React components for improved customization.",
       "Increased feature delivery speed by 30% through agile sprints and streamlined deployment.",
     ],
+    skills: ["PHP", "Laravel", "React", "Postgres"],
     logo: "sigfig_logo.jpeg",
   },
   {
     company: "Nathan James",
-    period: "2020 - 2021, 2022 - 2022",
+    period: "2020 - 2022",
     position: "Lead Software Engineer",
     description: "Spearhead engineering initiatives to streamline business operations through scalable automation and real-time data processing. Enhance ERP efficiency with API-driven solutions and optimize logistics with intelligent barcode scanning integrations.",
     tasks: [
       "Developed and delivered an API-driven ERP system, automating invoicing & business operations.",
       "Integrated real-time barcode scanning, optimizing warehouse management workflows.",
     ],
+    skills: ["PHP", "Laravel", "Vue.js", "Postgres"],
     logo: "nathanjames_logo.jpeg",
   },
   {
@@ -60,6 +66,7 @@ const experiences = [
       "Improved client-side GraphQL caching, reducing page load times by 45%.",
       "Developed company-wide design systems, ensuring UI/UX consistency across applications.",
     ],
+    skills: ["Nodejs", "Postgres", "React", "GraphQL", "TypeScript"],
     logo: "playvs_logo.jpeg",
   },
   {
@@ -72,6 +79,7 @@ const experiences = [
       "Migrated data pipelines to a RabbitMQ-based system, increasing processing efficiency.",
       "Directed AWS cloud migration, improving infrastructure scalability and cost efficiency.",
     ],
+    skills: ["C#", "React", "Go", "JavaScript", "MySQL", "PHP", ".Net", "CSS"],
     logo: "pricespider_logo.jpeg",
   },
   {
@@ -84,6 +92,7 @@ const experiences = [
         "Enabled seamless research access by developing a centralized Data Portal for collected data.",
         "Directed all frontend strategy in collaboration with the VP of Engineering, ensuring optimal technical decisions and execution.",
     ],
+    skills: ["Node.js", "JavaScript", "React", "CSS"],
     logo: "softvision_logo.jpeg",
   },
   {
@@ -94,6 +103,7 @@ const experiences = [
     tasks: [
         "Enhanced in-app communication by 50% through the implementation of a real-time user chat experience.",
     ],
+    skills: ["PHP", "JavaScript", "React", "CSS"],
     logo: "reflexmedia.jpeg",
   },
   {
@@ -105,6 +115,7 @@ const experiences = [
         "Boosted conversion rates by over 40% via deployment of A/B testing tools.",
         "Led the migration of a legacy Java application to a modern architecture by developing a scalable Java API and React-based frontend, enhancing performance, maintainability, and user experience.",
     ],
+    skills: ["Java", "JavaScript", "React", "CSS"],
     logo: "vegas_com_logo.jpeg",
   },
   {
@@ -115,43 +126,84 @@ const experiences = [
     tasks: [
         "Delivered real-time, data-intensive application enabling Bond Traders to make informed decisions by architecting and developing high-performance system under contract with Morgan Stanley.",
     ],
+    skills: ["Java", "JavaScript", "Angular.js", "CSS"],
     logo: "virtusa_logo.jpg",
   },
 ];
 </script>
 
 <template>
-  <section>
-    <h2 class="text-3xl font-bold">Experience</h2>
-    <ol class="flex flex-col gap-6 mt-6">
-      <li v-for="experience in experiences" class="bg-white border hover:scale-[1.05] transition duration-300 p-5 rounded-xl"  itemscope itemtype="http://schema.org/OrganizationRole">
-        <div class="flex flex-col sm:flex-row print:flex-row gap-3 mb-2">
-          <img
-            :src="'/companies/' + experience.logo"
-            :alt="`${experience.company}'s logo'`"
-            height="12"
-            itemprop="image"
-            class="w-12 h-full rounded-full"
-          />
-          <div class="w-full">
-            <div class="flex justify-between items-center">
-              <h2 class="text-gray-600 font-medium" itemprop="memberOf" itemscope itemtype="http://schema.org/Organization">
-            <span itemprop="name"> {{ experience.company }}</span>
-              </h2>
-              <span class="text-sm text-gray-500" itemprop="startDate">{{ experience.period }}</span>
+  <div>
+    <div class="flex items-center gap-3 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900">Experience</h2>
+      <div class="flex-grow border-t border-gray-200"></div>
+    </div>
+
+    <div class="space-y-6">
+      <Disclosure v-for="(experience, index) in experiences" 
+          :key="experience.company"
+          :defaultOpen="index === 0"
+          class="group relative bg-white rounded-2xl border border-gray-200/75 hover:border-blue-500/50 hover:shadow-sm transition-all duration-200"
+          itemscope 
+          itemtype="http://schema.org/OrganizationRole">
+        <div class="p-8">
+          <!-- Company Header -->
+          <div class="flex items-start gap-4 mb-4">
+            <div class="relative">
+              <div class="w-12 h-12 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors">
+                <img
+                  :src="'/companies/' + experience.logo"
+                  :alt="`${experience.company}'s logo'`"
+                  itemprop="image"
+                  class="w-full h-full object-contain"
+                />
+              </div>
             </div>
-            <span  itemprop="roleName" class="text-xl block mt-2 sm:mt-0 print:mt-0 font-semibold">{{
-              experience.position
-            }}</span>
+            <div class="flex-grow min-w-0">
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                <h3 class="text-lg font-semibold text-gray-900" itemprop="memberOf" itemscope itemtype="http://schema.org/Organization">
+                  <span itemprop="name">{{ experience.company }}</span>
+                </h3>
+                <span class="inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700" itemprop="startDate">
+                  {{ experience.period }}
+                </span>
+              </div>
+              <span itemprop="roleName" class="block text-blue-600 font-medium">
+                {{ experience.position }}
+              </span>
+            </div>
+            <DisclosureButton class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition-all duration-200">
+              <span>View Details</span>
+              <Icon icon="heroicons:chevron-down" class="w-4 h-4 transform transition-transform duration-200 ui-open:rotate-180" />
+            </DisclosureButton>
+          </div>
+
+          <!-- Description -->
+          <div itemprop="hasOccupation" itemscope itemtype="http://schema.org/Occupation">
+            <p class="text-gray-600 mb-4 leading-relaxed">{{ experience.description }}</p>
+            
+            <!-- Skills Tags (Always visible) -->
+            <div v-if="experience.skills" class="flex flex-wrap gap-2 mb-4">
+              <span v-for="skill in experience.skills" 
+                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
+                {{ skill }}
+              </span>
+            </div>
+            
+            <DisclosurePanel class="pt-4 border-t border-gray-100">
+              <!-- Achievements -->
+              <div class="space-y-2.5">
+                <div v-for="task in experience.tasks" 
+                    itemprop="skills" 
+                    class="relative pl-5 text-gray-700">
+                  <div class="absolute left-0 top-[0.6rem] w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+                  <span class="leading-relaxed">{{ task }}</span>
+                </div>
+              </div>
+            </DisclosurePanel>
           </div>
         </div>
-        <div itemprop="hasOccupation" itemscope itemtype="http://schema.org/Occupation">
-          <p class="font-semibold mb-2"> {{ experience.description }} </p>
-          <ul>
-            <li v-for="task in experience.tasks" itemprop="skills" class="list-inside list-disc">{{ task }}</li>
-          </ul>
-        </div>
-      </li>
-    </ol>
-  </section>
+      </Disclosure>
+    </div>
+  </div>
 </template>
