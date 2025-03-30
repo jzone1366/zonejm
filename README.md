@@ -1,6 +1,7 @@
-# Nuxt Minimal Starter
+# Personal CV Site
+[![Netlify Status](https://api.netlify.com/api/v1/badges/27aff799-7f2c-4076-9dca-533a35cd7e15/deploy-status?branch=main)](https://app.netlify.com/sites/zonejm/deploys)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a CV site written in Vue and tailwindcss.
 
 ## Setup
 
