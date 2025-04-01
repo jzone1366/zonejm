@@ -2,58 +2,14 @@
 import { Icon } from '@iconify/vue'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 
-const projects = ref([])
-const loading = ref(true)
-
-// Fetch GitHub projects
-const fetchProjects = async () => {
-  try {
-    const response = await fetch('https://api.github.com/users/jzone1366/repos?sort=updated&per_page=10')
-    const data = await response.json()
-    
-    // Fetch additional details for each repository
-    const detailedProjects = await Promise.all(
-      data.map(async (repo) => {
-        // Fetch languages for the repo
-        const languagesResponse = await fetch(repo.languages_url)
-        const languages = await languagesResponse.json()
-        
-        return {
-          name: repo.name,
-          description: repo.description,
-          language: repo.language,
-          stars: repo.stargazers_count,
-          forks: repo.forks_count,
-          watchers: repo.watchers_count,
-          url: repo.html_url,
-          topics: repo.topics || [],
-          updated: new Date(repo.updated_at).toLocaleDateString(),
-          created: new Date(repo.created_at).toLocaleDateString(),
-          languages: Object.keys(languages),
-          isPrivate: repo.private,
-          defaultBranch: repo.default_branch,
-          size: repo.size
-        }
-      })
-    )
-    
-    projects.value = detailedProjects
-  } catch (error) {
-    console.error('Error fetching GitHub projects:', error)
-  } finally {
-    loading.value = false
-  }
-}
-
-onMounted(() => {
-  fetchProjects()
+const { repositories, loading, error, fetchGithubData, formatSize } = useGithub({
+  username: 'jzone1366',
+  reposPerPage: 6 // Show 6 most recent projects
 })
 
-// Format size to human readable format
-const formatSize = (size) => {
-  if (size < 1024) return `${size} KB`
-  return `${(size / 1024).toFixed(1)} MB`
-}
+onMounted(() => {
+  fetchGithubData()
+})
 </script>
 
 <template>
@@ -67,8 +23,12 @@ const formatSize = (size) => {
       <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
     </div>
 
+    <div v-else-if="error" class="text-red-600 text-center py-12">
+      Failed to load projects. Please try again later.
+    </div>
+
     <div v-else class="space-y-6">
-      <Disclosure v-for="(project, index) in projects" 
+      <Disclosure v-for="(project, index) in repositories" 
           :key="project.name"
           :defaultOpen="index === 0"
           v-slot="{ open }"
@@ -84,16 +44,16 @@ const formatSize = (size) => {
             <div class="flex-grow min-w-0">
               <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
                 <h3 class="text-lg font-semibold text-gray-900">
-                  <a :href="project.url" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition-colors">
+                  <a :href="project.html_url" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition-colors">
                     {{ project.name }}
                   </a>
                 </h3>
                 <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
                   <Icon icon="mdi:star" class="w-3 h-3" />
-                  {{ project.stars }}
+                  {{ project.stargazers_count }}
                 </span>
                 <span class="inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-50 text-gray-700">
-                  {{ project.updated }}
+                  {{ new Date(project.updated_at).toLocaleDateString() }}
                 </span>
               </div>
               <span class="block text-blue-600 font-medium">
@@ -111,8 +71,9 @@ const formatSize = (size) => {
             <p class="text-gray-600 mb-4 leading-relaxed">{{ project.description }}</p>
             
             <!-- Topics Tags -->
-            <div v-if="project.topics.length" class="flex flex-wrap gap-2">
+            <div v-if="project.topics?.length" class="flex flex-wrap gap-2">
               <span v-for="topic in project.topics" 
+                    :key="topic"
                     class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
                 {{ topic }}
               </span>
@@ -127,7 +88,7 @@ const formatSize = (size) => {
                 <dl class="space-y-1">
                   <div class="flex items-center gap-2 text-sm">
                     <dt class="text-gray-500">Created:</dt>
-                    <dd class="text-gray-900">{{ project.created }}</dd>
+                    <dd class="text-gray-900">{{ new Date(project.created_at).toLocaleDateString() }}</dd>
                   </div>
                   <div class="flex items-center gap-2 text-sm">
                     <dt class="text-gray-500">Size:</dt>
@@ -135,7 +96,7 @@ const formatSize = (size) => {
                   </div>
                   <div class="flex items-center gap-2 text-sm">
                     <dt class="text-gray-500">Default Branch:</dt>
-                    <dd class="text-gray-900">{{ project.defaultBranch }}</dd>
+                    <dd class="text-gray-900">{{ project.default_branch }}</dd>
                   </div>
                 </dl>
               </div>
@@ -144,27 +105,17 @@ const formatSize = (size) => {
                 <dl class="space-y-1">
                   <div class="flex items-center gap-2 text-sm">
                     <dt class="text-gray-500">Forks:</dt>
-                    <dd class="text-gray-900">{{ project.forks }}</dd>
+                    <dd class="text-gray-900">{{ project.forks_count }}</dd>
                   </div>
                   <div class="flex items-center gap-2 text-sm">
                     <dt class="text-gray-500">Watchers:</dt>
-                    <dd class="text-gray-900">{{ project.watchers }}</dd>
+                    <dd class="text-gray-900">{{ project.watchers_count }}</dd>
                   </div>
                   <div class="flex items-center gap-2 text-sm">
                     <dt class="text-gray-500">Visibility:</dt>
-                    <dd class="text-gray-900">{{ project.isPrivate ? 'Private' : 'Public' }}</dd>
+                    <dd class="text-gray-900">{{ project.private ? 'Private' : 'Public' }}</dd>
                   </div>
                 </dl>
-              </div>
-            </div>
-            <div class="mt-4">
-              <h4 class="text-sm font-medium text-gray-900 mb-2">Languages Used</h4>
-              <div class="flex flex-wrap gap-2">
-                <span v-for="lang in project.languages" 
-                      :key="lang"
-                      class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-blue-50 text-blue-700">
-                  {{ lang }}
-                </span>
               </div>
             </div>
           </DisclosurePanel>

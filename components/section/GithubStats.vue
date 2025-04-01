@@ -1,60 +1,13 @@
 <script setup>
 import { Icon } from '@iconify/vue'
 
-const stats = ref({
-  followers: 0,
-  following: 0,
-  publicRepos: 0,
-  totalStars: 0,
-  languages: []
+const { stats, loading, error, fetchGithubData } = useGithub({
+  username: 'jzone1366',
+  reposPerPage: 100 // Fetch more repos for better language stats
 })
 
-const loading = ref(true)
-
-// Fetch GitHub stats
-const fetchGithubStats = async () => {
-  try {
-    // Fetch user data
-    const userResponse = await fetch('https://api.github.com/users/jzone1366')
-    const userData = await userResponse.json()
-    
-    // Fetch repositories for language stats
-    const reposResponse = await fetch('https://api.github.com/users/jzone1366/repos?per_page=100')
-    const reposData = await reposResponse.json()
-    
-    // Calculate language stats
-    const languageStats = {}
-    reposData.forEach(repo => {
-      if (repo.language) {
-        languageStats[repo.language] = (languageStats[repo.language] || 0) + 1
-      }
-    })
-    
-    // Sort languages by count
-    const sortedLanguages = Object.entries(languageStats)
-      .sort(([, a], [, b]) => b - a)
-      .slice(0, 5)
-      .map(([language]) => language)
-    
-    // Calculate total stars
-    const totalStars = reposData.reduce((acc, repo) => acc + repo.stargazers_count, 0)
-    
-    stats.value = {
-      followers: userData.followers,
-      following: userData.following,
-      publicRepos: userData.public_repos,
-      totalStars,
-      languages: sortedLanguages
-    }
-  } catch (error) {
-    console.error('Error fetching GitHub stats:', error)
-  } finally {
-    loading.value = false
-  }
-}
-
 onMounted(() => {
-  fetchGithubStats()
+  fetchGithubData()
 })
 </script>
 
@@ -69,6 +22,10 @@ onMounted(() => {
 
     <div v-if="loading" class="flex justify-center items-center py-8">
       <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500"></div>
+    </div>
+
+    <div v-else-if="error" class="text-red-600 text-sm text-center py-4">
+      Failed to load stats
     </div>
 
     <div v-else class="space-y-4">
@@ -103,7 +60,7 @@ onMounted(() => {
               <Icon icon="mdi:source-repository" class="w-4 h-4 text-purple-600" />
             </div>
             <div class="text-xs text-gray-600">Repos</div>
-            <div class="text-lg font-bold text-gray-900">{{ stats.publicRepos }}</div>
+            <div class="text-lg font-bold text-gray-900">{{ stats.public_repos }}</div>
           </div>
         </div>
 
