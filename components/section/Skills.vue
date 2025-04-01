@@ -1,6 +1,11 @@
 <template>
     <div class="space-y-4">
-        <h3 class="text-sm font-medium text-gray-900 uppercase tracking-wider">Skills</h3>
+        <div class="flex items-center gap-2 mb-4">
+            <div class="w-5 h-5 rounded bg-blue-50 flex items-center justify-center">
+                <Icon icon="heroicons:code-bracket" class="w-3.5 h-3.5 text-blue-600" />
+            </div>
+            <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">Skills</h3>
+        </div>
         <div class="flex flex-wrap gap-2.5">
             <div v-for="skill in skills"
                 class="group flex items-center gap-2.5 px-3 py-2 bg-gray-50 border border-gray-100 rounded-xl hover:bg-white hover:border-gray-200 hover:shadow-sm transition-all duration-200"

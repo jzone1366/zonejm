@@ -7,6 +7,8 @@ import Skills from '~/components/section/Skills.vue'
 import Intro from '~/components/section/Intro.vue'
 import Details from '~/components/section/Details.vue'
 import Socials from '~/components/section/Socials.vue'
+import Projects from '~/components/section/Projects.vue'
+import GithubStats from '~/components/section/GithubStats.vue'
 
 useHead({
     title: "JMZ | Software Engineering Leader | AI Nerd"
@@ -29,6 +31,8 @@ useHead({
               <Socials />
               <div class="h-px bg-gray-100"></div>
               <Skills />
+              <div class="h-px bg-gray-100"></div>
+              <GithubStats />
             </div>
           </div>
         </aside>
@@ -37,6 +41,7 @@ useHead({
         <main class="space-y-8">
           <Experience />
           <Education />
+          <Projects />
           <Weather />
         </main>
       </div>

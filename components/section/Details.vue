@@ -1,6 +1,11 @@
 <template>
     <div class="space-y-4">
-        <h3 class="text-sm font-medium text-gray-900 uppercase tracking-wider">Contact Details</h3>
+        <div class="flex items-center gap-2 mb-4">
+            <div class="w-5 h-5 rounded bg-blue-50 flex items-center justify-center">
+                <Icon icon="heroicons:identification" class="w-3.5 h-3.5 text-blue-600" />
+            </div>
+            <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">Contact Details</h3>
+        </div>
         <div class="space-y-2.5">
             <NuxtLink 
                 to="mailto:jzone1229@google.com" 
