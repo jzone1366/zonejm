@@ -52,12 +52,11 @@ export default function Home() {
               href="https://github.com/jzone1366/zonejm"
               className="group flex items-center gap-2 hover:text-blue-600 transition-colors">
               <Icon icon="simple-icons:github" className="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity" />
-              <span>Last updated on 03/29/2025</span>
+              <span>Last updated on 04/18/2025</span>
             </Link>
           </div>
         </div>
       </footer>
-
     </div>
   );
 }
