@@ -73,7 +73,7 @@ export function useGithub(config: GithubConfig) {
 			const data: Repository[] = await response.json();
 
 			if (!response.ok) {
-				throw new Error(data?.['message'] || 'Failed to fetch repositories');
+				throw new Error('Failed to fetch repositories');
 			}
 
 			setRepositories(data);
