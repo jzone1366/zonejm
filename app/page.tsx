@@ -6,6 +6,7 @@ import Experience from "./components/Experience";
 import Skills from "./components/Skills"
 import GithubStatsCard from "./components/GithubStats";
 import GithubProjects from "./components/GithubProjects";
+import Apps from "./components/Apps";
 
 import Link from 'next/link'
 import { Icon } from '@iconify/react'
@@ -27,13 +28,13 @@ export default function Home() {
                 <Skills />
                 <div className="h-px bg-gray-100"></div>
                 <GithubStatsCard />
-
               </div>
             </div>
           </aside>
 
           <main className="space-y-8">
             <Experience />
+            <Apps />
             <Education />
             <GithubProjects />
           </main>
