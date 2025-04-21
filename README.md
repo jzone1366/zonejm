@@ -1,5 +1,5 @@
-# Personal CV Site
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6ebaa4a8-15e8-4ba3-b148-eb50682c4980/deploy-status)](https://app.netlify.com/sites/zonejm-next/deploys)
+# Personal CV Site      [![Netlify Status](https://api.netlify.com/api/v1/badges/6ebaa4a8-15e8-4ba3-b148-eb50682c4980/deploy-status)](https://app.netlify.com/sites/zonejm-next/deploys)
+
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
