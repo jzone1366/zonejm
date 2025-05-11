@@ -38,6 +38,15 @@ export default function Socials() {
 					</div>
 					<span className="font-medium">Kaggle</span>
 				</Link>
+				<Link href="https://x.com/jzone1366"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="group flex items-center gap-3 text-gray-600 hover:text-[#000000] transition-all duration-200 p-2.5 rounded-xl hover:bg-gray-100 hover:shadow-sm">
+					<div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-50 group-hover:bg-[#000000] transition-colors">
+						<Icon icon="simple-icons:x" className="w-5 h-5 group-hover:text-white transition-colors" />
+					</div>
+					<span className="font-medium">@jzone1366</span>
+				</Link>
 			</div>
 		</div>
 

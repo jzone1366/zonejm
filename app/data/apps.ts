@@ -9,7 +9,7 @@ interface App {
 
 const apps: App[] = [
   {
-    name: "PitchTrackApp",
+    name: "PitchTrack",
     description: "Track pitch count, speed, and arm velocity with PitchTrack. View instant stats on your watch and deeper trends with the iOS app. Train smart, pitch better.",
     appStoreUrl: "https://apps.apple.com/us/app/pitchtrackapp/id6744333237",
     icon: "pitch_track.png", // We'll use an iOS icon from the Iconify set
