@@ -58,19 +58,6 @@ const experiences = [
     logo: "nathanjames_logo.jpeg",
   },
   {
-    company: "PlayVS",
-    period: "2021 - 2022",
-    position: "Senior Software Engineer",
-    description:
-      "Standardized UI with custom component library, aligning with product design. Strengthened team expertise by refining GraphQL API design and best practices. Enhanced processes by establishing engineering standards and mentoring teams.",
-    tasks: [
-      "Improved client-side GraphQL caching, reducing page load times by 45%.",
-      "Developed company-wide design systems, ensuring UI/UX consistency across applications.",
-    ],
-    skills: ["Nodejs", "Postgres", "React", "GraphQL", "TypeScript"],
-    logo: "playvs_logo.jpeg",
-  },
-  {
     company: "PriceSpider",
     period: "2019 - 2020",
     position: "Lead Software Engineer",
