@@ -1,6 +1,7 @@
 'use client';
 
 import { Icon } from '@iconify/react';
+import Image from 'next/image';
 import apps from '../data/apps';
 
 export default function Apps() {
@@ -20,8 +21,10 @@ export default function Apps() {
             <div className="flex items-start gap-3 md:gap-4">
               <div className="relative flex-shrink-0">
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gray-50 p-1.5 md:p-2 flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors">
-                  <img src={`/apps/${app.icon}`}
+                  <Image src={`/apps/${app.icon}`}
                     alt={`${app.name}'s logo`}
+                    width={48}
+                    height={48}
                     className="w-full h-full object-contain" />
                 </div>
               </div>

@@ -58,7 +58,7 @@ export class ErrorBoundary extends Component<Props, State> {
 }
 
 // Simple wrapper for individual components
-export function withErrorBoundary<T extends {}>(
+export function withErrorBoundary<T extends object>(
   Component: React.ComponentType<T>,
   fallback?: ReactNode
 ) {

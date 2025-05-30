@@ -1,4 +1,5 @@
 import educations from "@/app/data/education";
+import Image from 'next/image';
 
 export default function Education() {
   return (
@@ -19,8 +20,10 @@ export default function Education() {
               <div className="flex items-start gap-4">
                 <div className="relative">
                   <div className="w-12 h-12 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors">
-                    <img src={`/schools/${education.logo}`}
+                    <Image src={`/schools/${education.logo}`}
                       alt={`${education.institution}'s logo'`}
+                      width={48}
+                      height={48}
                       className="w-full h-full object-contain" />
                   </div>
                 </div>
