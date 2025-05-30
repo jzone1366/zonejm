@@ -1,19 +1,18 @@
 'use client';
 
-import { Disclosure } from '@headlessui/react';
 import { Icon } from '@iconify/react';
 import { useGithub } from '../hooks/useGithub';
 
 export default function GithubProjects() {
-	const { repositories, loading, error, formatSize } = useGithub({
+	const { repositories, loading, error } = useGithub({
 		username: 'jzone1366',
 		reposPerPage: 6,
 	});
 
 	return (
 		<div>
-			<div className="flex items-center gap-3 mb-8">
-				<h2 className="text-2xl font-bold text-gray-900">Projects</h2>
+			<div className="flex items-center gap-3 mb-6 md:mb-8">
+				<h2 className="text-xl md:text-2xl font-bold text-gray-900">Projects</h2>
 				<div className="flex-grow border-t border-gray-200" />
 			</div>
 
@@ -26,119 +25,72 @@ export default function GithubProjects() {
 					Failed to load projects. Please try again later.
 				</div>
 			) : (
-				<div className="space-y-6">
-					{repositories.map((project, index) => (
-						<Disclosure
+				<div className="grid gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+					{repositories.map((project) => (
+						<a
 							key={project.name}
-							defaultOpen={index === 0}
-							as="div"
-							className="group relative bg-white rounded-2xl border border-gray-200/75 hover:border-blue-500/50 hover:shadow-sm transition-all duration-200"
+							href={project.html_url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="group block bg-white rounded-2xl border border-gray-200/75 p-4 md:p-6 hover:border-blue-500/50 hover:shadow-md transition-all duration-200"
 						>
-							{({ open }) => (
-								<div className="p-8">
-									{/* Header */}
-									<div className="flex items-start gap-4 mb-4">
-										<div className="relative">
-											<div className="w-12 h-12 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors">
-												<Icon icon="mdi:github" className="w-6 h-6 text-gray-600" />
-											</div>
-										</div>
-										<div className="flex-grow min-w-0">
-											<div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
-												<h3 className="text-lg font-semibold text-gray-900">
-													<a
-														href={project.html_url}
-														target="_blank"
-														rel="noopener noreferrer"
-														className="hover:text-blue-600 transition-colors"
-													>
-														{project.name}
-													</a>
-												</h3>
-												<span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
-													<Icon icon="mdi:star" className="w-3 h-3" />
-													{project.stargazers_count}
-												</span>
-												<span className="inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-50 text-gray-700">
-													{new Date(project.updated_at).toLocaleDateString()}
-												</span>
-											</div>
-											<span className="block text-blue-600 font-medium">{project.language}</span>
-										</div>
-
-										<Disclosure.Button className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition-all duration-200">
-											<span>{open ? 'Hide Details' : 'View Details'}</span>
-											<Icon
-												icon="heroicons:chevron-down"
-												className={`w-4 h-4 transform transition-transform duration-200 ${open ? 'rotate-180' : ''
-													}`}
-											/>
-										</Disclosure.Button>
+							{/* Header with language and stats */}
+							<div className="flex items-center justify-between mb-3">
+								<div className="flex items-center gap-2">
+									<Icon icon="mdi:github" className="w-5 h-5 text-gray-400" />
+									{project.language && (
+										<span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">
+											{project.language}
+										</span>
+									)}
+								</div>
+								<div className="flex items-center gap-3 text-xs text-gray-500">
+									<div className="flex items-center gap-1">
+										<Icon icon="mdi:star" className="w-3 h-3" />
+										<span>{project.stargazers_count}</span>
 									</div>
-
-									{/* Description */}
-									<div>
-										<p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
-
-										{/* Topics */}
-										{project.topics?.length > 0 && (
-											<div className="flex flex-wrap gap-2">
-												{project.topics.map((topic) => (
-													<span
-														key={topic}
-														className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
-													>
-														{topic}
-													</span>
-												))}
-											</div>
-										)}
+									<div className="flex items-center gap-1">
+										<Icon icon="mdi:source-fork" className="w-3 h-3" />
+										<span>{project.forks_count}</span>
 									</div>
+								</div>
+							</div>
 
-									{/* Panel */}
-									<Disclosure.Panel className="mt-4 pt-4 border-t border-gray-100">
-										<div className="grid grid-cols-2 gap-4">
-											<div>
-												<h4 className="text-sm font-medium text-gray-900 mb-2">Repository Details</h4>
-												<dl className="space-y-1 text-sm">
-													<div className="flex items-center gap-2">
-														<dt className="text-gray-500">Created:</dt>
-														<dd className="text-gray-900">
-															{new Date(project.created_at).toLocaleDateString()}
-														</dd>
-													</div>
-													<div className="flex items-center gap-2">
-														<dt className="text-gray-500">Size:</dt>
-														<dd className="text-gray-900">{formatSize(project.size)}</dd>
-													</div>
-													<div className="flex items-center gap-2">
-														<dt className="text-gray-500">Default Branch:</dt>
-														<dd className="text-gray-900">{project.default_branch}</dd>
-													</div>
-												</dl>
-											</div>
-											<div>
-												<h4 className="text-sm font-medium text-gray-900 mb-2">Statistics</h4>
-												<dl className="space-y-1 text-sm">
-													<div className="flex items-center gap-2">
-														<dt className="text-gray-500">Forks:</dt>
-														<dd className="text-gray-900">{project.forks_count}</dd>
-													</div>
-													<div className="flex items-center gap-2">
-														<dt className="text-gray-500">Watchers:</dt>
-														<dd className="text-gray-900">{project.watchers_count}</dd>
-													</div>
-													<div className="flex items-center gap-2">
-														<dt className="text-gray-500">Visibility:</dt>
-														<dd className="text-gray-900">{project.private ? 'Private' : 'Public'}</dd>
-													</div>
-												</dl>
-											</div>
-										</div>
-									</Disclosure.Panel>
+							{/* Project name */}
+							<h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+								{project.name}
+							</h3>
+
+							{/* Description */}
+							<p className="text-sm text-gray-600 mb-4 leading-relaxed line-clamp-3">
+								{project.description || 'No description available'}
+							</p>
+
+							{/* Topics (first 3 only) */}
+							{project.topics && project.topics.length > 0 && (
+								<div className="flex flex-wrap gap-1.5 mb-3">
+									{project.topics.slice(0, 3).map((topic) => (
+										<span
+											key={topic}
+											className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-700"
+										>
+											{topic}
+										</span>
+									))}
+									{project.topics.length > 3 && (
+										<span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-500">
+											+{project.topics.length - 3}
+										</span>
+									)}
 								</div>
 							)}
-						</Disclosure>
+
+							{/* Footer with update date */}
+							<div className="flex items-center justify-between text-xs text-gray-500 pt-3 border-t border-gray-100">
+								<span>Updated {new Date(project.updated_at).toLocaleDateString()}</span>
+								<Icon icon="heroicons:arrow-top-right-on-square" className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+							</div>
+						</a>
 					))}
 				</div>
 			)}
