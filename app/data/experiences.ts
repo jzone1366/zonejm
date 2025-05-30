@@ -1,7 +1,7 @@
 const experiences = [
   {
     company: "QL2 Software",
-    period: "2024 - Present",
+    period: "2024 - 2025",
     position: "Director of Engineering",
     description:
       "Elevate engineering expertise by orchestrating comprehensive training and collaborative working sessions on core systems. Strengthen monitoring and alerting by deploying InfluxDB and Grafana.",
