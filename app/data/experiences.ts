@@ -1,4 +1,14 @@
-const experiences = [
+export interface Experience {
+  company: string;
+  period: string;
+  position: string;
+  description: string;
+  tasks: string[];
+  skills: string[];
+  logo: string;
+}
+
+const experiences: Experience[] = [
   {
     company: "QL2 Software",
     period: "2024 - 2025",

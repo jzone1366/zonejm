@@ -1,11 +1,7 @@
-'use client'; // required in Next.js app router if using state
-
 import { Icon } from '@iconify/react';
-import { useGithub } from '../hooks/useGithub'; // Adjust to your hook path
+import type { GithubStats } from '../lib/github';
 
-export default function GithubStatsCard() {
-	const { stats, loading, error } = useGithub({ username: 'jzone1366' });
-
+export default function GithubStatsCard({ stats }: { stats: GithubStats }) {
 	return (
 		<div>
 			<div className="flex items-center gap-2 mb-4">
@@ -15,23 +11,17 @@ export default function GithubStatsCard() {
 				<h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">GitHub Stats</h3>
 			</div>
 
-			{loading ? (
-				<div className="flex justify-center items-center py-8">
-					<div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500"></div>
+			<div className="space-y-4">
+				{/* Stats Grid */}
+				<div className="grid grid-cols-2 gap-3">
+					<StatCard icon="mdi:account-group" label="Followers" value={stats.followers} bg="blue" />
+					<StatCard icon="mdi:account-multiple" label="Following" value={stats.following} bg="green" />
+					<StatCard icon="mdi:source-repository" label="Repos" value={stats.public_repos} bg="purple" />
+					<StatCard icon="mdi:star" label="Stars" value={stats.totalStars} bg="yellow" />
 				</div>
-			) : error ? (
-				<div className="text-red-600 text-sm text-center py-4">Failed to load stats</div>
-			) : (
-				<div className="space-y-4">
-					{/* Stats Grid */}
-					<div className="grid grid-cols-2 gap-3">
-						<StatCard icon="mdi:account-group" label="Followers" value={stats.followers} bg="blue" />
-						<StatCard icon="mdi:account-multiple" label="Following" value={stats.following} bg="green" />
-						<StatCard icon="mdi:source-repository" label="Repos" value={stats.public_repos} bg="purple" />
-						<StatCard icon="mdi:star" label="Stars" value={stats.totalStars} bg="yellow" />
-					</div>
 
-					{/* Top Languages */}
+				{/* Top Languages */}
+				{stats.languages.length > 0 && (
 					<div className="bg-white rounded-xl border border-gray-200/75 p-4 hover:border-blue-500/50 hover:shadow-sm transition-all duration-200">
 						<div className="flex items-center gap-3 mb-3">
 							<div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center">
@@ -53,8 +43,8 @@ export default function GithubStatsCard() {
 							))}
 						</div>
 					</div>
-				</div>
-			)}
+				)}
+			</div>
 		</div>
 	);
 }

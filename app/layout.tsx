@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { SOCIAL_URLS } from "./lib/constants";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://zonejm.netlify.app"),
   title: "Joshua Zone | Software Engineering Leader | Principal Architect",
   description: "Director of Engineering with 10+ years of experience in software engineering, system architecture, and technical leadership. Expert in distributed systems, microservices, cloud-native architecture, and API strategy.",
   keywords: [
@@ -27,6 +29,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Joshua Zone" }],
   creator: "Joshua Zone",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -51,9 +56,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code", // Add your actual verification code
-  },
 };
 
 const structuredData = {
@@ -64,9 +66,9 @@ const structuredData = {
   "description": "Director of Engineering with 10+ years of experience in software engineering, system architecture, and technical leadership.",
   "url": "https://zonejm.netlify.app",
   "sameAs": [
-    "https://linkedin.com/in/zonejm",
-    "https://github.com/jzone1366",
-    "https://x.com/jzone1366"
+    SOCIAL_URLS.linkedin,
+    SOCIAL_URLS.github,
+    SOCIAL_URLS.x,
   ],
   "knowsAbout": [
     "Software Engineering",

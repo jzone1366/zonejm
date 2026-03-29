@@ -25,7 +25,7 @@ export default function Experience() {
                 <div className="relative flex-shrink-0">
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gray-50 p-1.5 md:p-2 flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors">
                     <Image src={`/companies/${experience.logo}`}
-                      alt={`${experience.company}'s logo'`}
+					alt={`${experience.company} logo`}
                       itemProp="image"
                       width={48}
                       height={48}
@@ -113,6 +113,6 @@ export default function Experience() {
         ))
         }
       </div>
-    </section >
+    </section>
   );
 }

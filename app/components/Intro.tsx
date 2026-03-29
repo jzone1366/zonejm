@@ -5,12 +5,13 @@ export default function Intro() {
 		<>
 			<div className="text-center">
 				<div className="flex justify-center items-center mb-6">
-					<Image
-						src="/selfie.jpg"
-						alt="Image of Josh"
-						width={144}
-						height={144}
-						itemProp="image"
+				<Image
+					src="/selfie.jpg"
+					alt="Joshua Zone, Software Engineering Leader"
+					width={144}
+					height={144}
+					priority
+					itemProp="image"
 						className='rounded-2xl object-cover object-[center_20%] ring-4 ring-gray-50 shadow-lg w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36'
 					/>
 				</div>

@@ -1,4 +1,4 @@
-interface App {
+export interface App {
   name: string;
   description: string;
   appStoreUrl?: string;

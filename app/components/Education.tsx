@@ -4,8 +4,8 @@ import Image from 'next/image';
 export default function Education() {
   return (
     <section>
-      <div className="flex items-center gap-3 mb-8">
-        <h2 className="text-2xl font-bold text-gray-900">Education</h2>
+      <div className="flex items-center gap-3 mb-6 md:mb-8">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900">Education</h2>
         <div className="flex-grow border-t border-gray-200"></div>
       </div>
 
@@ -14,14 +14,14 @@ export default function Education() {
           educations.map((education, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-2xl border border-gray-200/75 p-8 hover:border-blue-500/50 hover:shadow-sm transition-all duration-200"
+              className="group relative bg-white rounded-2xl border border-gray-200/75 p-6 md:p-8 hover:border-blue-500/50 hover:shadow-sm transition-all duration-200"
               itemScope
               itemType="https://schema.org/EducationalOrganization">
               <div className="flex items-start gap-4">
                 <div className="relative">
                   <div className="w-12 h-12 rounded-xl bg-gray-50 p-2 flex items-center justify-center border border-gray-100 group-hover:border-blue-100 transition-colors">
                     <Image src={`/schools/${education.logo}`}
-                      alt={`${education.institution}'s logo'`}
+					alt={`${education.institution} logo`}
                       width={48}
                       height={48}
                       className="w-full h-full object-contain" />
@@ -41,6 +41,6 @@ export default function Education() {
           ))
         }
       </div>
-    </section >
+    </section>
   );
 }

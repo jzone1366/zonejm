@@ -1,12 +1,10 @@
-'use client';
-
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
 import apps from '../data/apps';
 
 export default function Apps() {
   return (
-    <div>
+    <section>
       <div className="flex items-center gap-3 mb-6 md:mb-8">
         <h2 className="text-xl md:text-2xl font-bold text-gray-900">Apps & Projects</h2>
         <div className="flex-grow border-t border-gray-200" />
@@ -65,6 +63,6 @@ export default function Apps() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

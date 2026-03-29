@@ -14,7 +14,13 @@ const nextConfig: NextConfig = {
 
 	// Experimental features for better performance
 	experimental: {
-		optimizePackageImports: ['@iconify/react'],
+		optimizePackageImports: [
+			'@iconify/react',
+			'@iconify-json/heroicons',
+			'@iconify-json/logos',
+			'@iconify-json/mdi',
+			'@iconify-json/simple-icons',
+		],
 	},
 
 	// Security headers
@@ -32,12 +38,24 @@ const nextConfig: NextConfig = {
 						value: 'DENY',
 					},
 					{
-						key: 'X-XSS-Protection',
-						value: '1; mode=block',
-					},
-					{
 						key: 'Referrer-Policy',
 						value: 'origin-when-cross-origin',
+					},
+					{
+						key: 'Strict-Transport-Security',
+						value: 'max-age=63072000; includeSubDomains; preload',
+					},
+					{
+						key: 'Content-Security-Policy',
+						value: [
+							"default-src 'self'",
+							"script-src 'self' 'unsafe-inline'",
+							"style-src 'self' 'unsafe-inline'",
+							"img-src 'self' data:",
+							"font-src 'self'",
+							"connect-src 'self'",
+							"frame-ancestors 'none'",
+						].join('; '),
 					},
 				],
 			},
