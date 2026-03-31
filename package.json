@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node scripts/generate-build-info.js",
+    "prebuild": "node scripts/generate-build-info.js && node scripts/generate-icon-data.js",
+    "predev": "node scripts/generate-icon-data.js",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",

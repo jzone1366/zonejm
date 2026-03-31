@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: var(--font-inter), system-ui, sans-serif;
 }
@@ -19,6 +21,11 @@
   :focus-visible {
     outline: 2px solid #3b82f6;
     outline-offset: 2px;
+  }
+
+  /* Dark mode focus ring */
+  .dark :focus-visible {
+    outline-color: #60a5fa;
   }
 }
 
@@ -49,13 +56,29 @@
     size: letter;
   }
 
+  /* Force light mode for print */
+  html {
+    color-scheme: light;
+  }
+
   body {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
+    font-size: 11pt;
+    background-color: white !important;
+    color: #111827 !important;
   }
 
-  /* Hide unnecessary elements when printing */
-  footer {
+  /* Force single-column layout */
+  .lg\:grid-cols-\[350px_1fr\],
+  .xl\:grid-cols-\[400px_1fr\] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hide interactive/dynamic elements */
+  footer,
+  nav[aria-label="Section navigation"],
+  a[href="#main-content"] {
     display: none !important;
   }
 
@@ -63,6 +86,28 @@
   .container {
     max-width: none !important;
     padding: 0 !important;
+  }
+
+  /* Remove sticky positioning */
+  .lg\:sticky {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Show URLs after external links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #6b7280;
+    word-break: break-all;
+  }
+
+  /* But not for links inside cards/badges with icons */
+  .rounded-full a[href^="http"]::after,
+  a[href^="http"] .sr-only,
+  a.group[href^="http"]::after {
+    content: none;
   }
 
   /* Improve text contrast for print */
@@ -74,21 +119,48 @@
     color: #6b7280 !important;
   }
 
-  /* Ensure backgrounds print */
+  .text-gray-400 {
+    color: #9ca3af !important;
+  }
+
+  /* Ensure backgrounds print cleanly — override dark mode too */
   .bg-white,
-  .bg-gray-50 {
+  .bg-gray-50,
+  .bg-gray-50\/50,
+  .dark\:bg-gray-900,
+  .dark\:bg-gray-950,
+  .dark\:bg-gray-800 {
     background-color: white !important;
+  }
+
+  /* Override dark mode text for print */
+  .dark\:text-white,
+  .dark\:text-gray-100,
+  .dark\:text-gray-200 {
+    color: #111827 !important;
+  }
+
+  /* Remove shadows and hover effects */
+  .shadow-sm,
+  .shadow-lg {
+    box-shadow: none !important;
   }
 
   /* Adjust spacing for print */
   .space-y-6 > * + *,
   .space-y-8 > * + * {
-    margin-top: 1rem !important;
+    margin-top: 0.75rem !important;
   }
 
   /* Prevent page breaks in cards */
   .rounded-2xl {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  /* Keep section headers with their content */
+  h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 }

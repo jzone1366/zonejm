@@ -16,10 +16,6 @@ const nextConfig: NextConfig = {
 	experimental: {
 		optimizePackageImports: [
 			'@iconify/react',
-			'@iconify-json/heroicons',
-			'@iconify-json/logos',
-			'@iconify-json/mdi',
-			'@iconify-json/simple-icons',
 		],
 	},
 
