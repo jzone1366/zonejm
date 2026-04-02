@@ -9,6 +9,8 @@ import Footer from "./components/Footer";
 import SectionNav from "./components/SectionNav";
 import SidebarEducation from "./components/SidebarEducation";
 import IconProvider from "./components/IconProvider";
+import ImpactMetrics from "./components/ImpactMetrics";
+import FadeUp from "./components/FadeUp";
 import { fetchGithubData } from "./lib/github";
 
 function GithubStatsLoading() {
@@ -71,26 +73,70 @@ export default function Home() {
 			</a>
 			<SectionNav />
 
-			<div className="max-w-4xl mx-auto px-4 py-6 md:py-12">
-				{/* Profile Header */}
+			{/* Hero */}
+			<div className="max-w-4xl mx-auto px-4 pt-6 md:pt-12">
 				<Intro />
-
-				{/* Main Content */}
-				<main id="main-content" className="space-y-6 md:space-y-8 mt-6 md:mt-8">
-					<Experience />
-					<Skills />
-					<About />
-					<Suspense fallback={<GithubProjectsLoading />}>
-						<GithubProjectsSection />
-					</Suspense>
-					<div className="grid gap-6 md:grid-cols-2">
-						<SidebarEducation />
-						<Suspense fallback={<GithubStatsLoading />}>
-							<GithubStatsSection />
-						</Suspense>
-					</div>
-				</main>
 			</div>
+
+			{/* Impact metrics strip — visual bridge between hero and content */}
+			<div className="max-w-4xl mx-auto px-4 py-5 md:py-6">
+				<ImpactMetrics />
+			</div>
+
+			{/* Main Content — alternating section bands */}
+			<main id="main-content">
+				{/* Experience */}
+				<div className="py-8 md:py-12">
+					<div className="max-w-4xl mx-auto px-4">
+						<FadeUp>
+							<Experience />
+						</FadeUp>
+					</div>
+				</div>
+
+				{/* Skills — banded */}
+				<div className="py-8 md:py-12 bg-white/60 dark:bg-white/[0.03]">
+					<div className="max-w-4xl mx-auto px-4">
+						<FadeUp>
+							<Skills />
+						</FadeUp>
+					</div>
+				</div>
+
+				{/* About */}
+				<div className="py-8 md:py-12">
+					<div className="max-w-4xl mx-auto px-4">
+						<FadeUp>
+							<About />
+						</FadeUp>
+					</div>
+				</div>
+
+				{/* Projects — banded */}
+				<div className="py-8 md:py-12 bg-white/60 dark:bg-white/[0.03]">
+					<div className="max-w-4xl mx-auto px-4">
+						<FadeUp>
+							<Suspense fallback={<GithubProjectsLoading />}>
+								<GithubProjectsSection />
+							</Suspense>
+						</FadeUp>
+					</div>
+				</div>
+
+				{/* Education + GitHub Stats */}
+				<div className="py-8 md:py-12">
+					<div className="max-w-4xl mx-auto px-4">
+						<FadeUp>
+							<div className="grid gap-6 md:grid-cols-2">
+								<SidebarEducation />
+								<Suspense fallback={<GithubStatsLoading />}>
+									<GithubStatsSection />
+								</Suspense>
+							</div>
+						</FadeUp>
+					</div>
+				</div>
+			</main>
 
 			<Footer />
 		</div>

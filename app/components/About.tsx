@@ -14,7 +14,7 @@ export default function About() {
         </p>
 
         <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-          At QL2, I lead platform engineering for a large-scale web data extraction system, working across Python, Golang, and AWS to reduce costs and improve throughput. Before that I built procurement intelligence infrastructure at TealBook, led investment platform architecture at SigFig, and scaled e-commerce systems at PriceSpider and Vegas.com.
+          At Ten Mile Square I lead the platform modernization of a core banking application, working across GraphQL, Kubernetes, and AWS. Before that I directed engineering at QL2 for a large-scale web data extraction system, built procurement intelligence infrastructure at TealBook, and led investment platform architecture at SigFig.
         </p>
 
         {/* What I focus on */}
@@ -45,7 +45,7 @@ export default function About() {
             Currently
           </h3>
           <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-            Building PitchTrack — an Apple Watch app for baseball pitch tracking — as a side project in Swift. At work, focused on migrating legacy scraping infrastructure to a modern event-driven platform on AWS.
+            Consulting at Ten Mile Square on a banking modernization project — cloud-first, GraphQL, Kubernetes on AWS. Building PitchTrack on the side, an Apple Watch app for baseball pitch tracking written in Swift. Always tinkering with ML tooling on Kaggle.
           </p>
         </div>
       </div>

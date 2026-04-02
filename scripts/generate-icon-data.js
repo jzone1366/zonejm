@@ -5,14 +5,14 @@ const path = require('path');
 const NEEDED_ICONS = {
 	heroicons: [
 		'arrow-top-right-on-square', 'arrows-right-left', 'arrow-trending-down',
-		'briefcase', 'chevron-down', 'code-bracket', 'computer-desktop',
+		'arrow-trending-up', 'briefcase', 'chevron-down', 'code-bracket', 'computer-desktop',
 		'document-arrow-down', 'envelope', 'identification', 'map-pin',
 		'moon-solid', 'phone', 'server-stack', 'sparkles', 'sun-solid',
 		'user', 'user-group', 'wrench-screwdriver',
 	],
 	mdi: [
 		'account-group', 'account-multiple', 'code-braces', 'github',
-		'source-fork', 'source-repository', 'star',
+		'source-fork',
 	],
 	'simple-icons': ['github', 'kaggle', 'linkedin', 'x'],
 	logos: [

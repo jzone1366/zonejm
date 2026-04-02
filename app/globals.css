@@ -29,6 +29,11 @@
   }
 }
 
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Custom scrollbar for webkit browsers */
 @layer utilities {
   .scrollbar-hide {
@@ -38,6 +43,17 @@
   
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.4s ease-out both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-up {
+      animation: none;
+      opacity: 1;
+    }
   }
 
   /* Line clamp utilities */
@@ -151,4 +167,18 @@
     break-after: avoid;
     page-break-after: avoid;
   }
+
+  /* Force hero gradient card to light theme for print */
+  header {
+    background-image: none !important;
+    background-color: white !important;
+    border-color: #e5e7eb !important;
+  }
+  header, header p, header h1, header span, header div {
+    color: #111827 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+  header a { color: #2563eb !important; }
+  header img { opacity: 1 !important; }
 }

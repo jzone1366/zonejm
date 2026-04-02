@@ -54,7 +54,14 @@ export default function Experience() {
               </div>
 
               <div itemProp="hasOccupation" itemScope itemType="http://schema.org/Occupation">
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm md:text-base">{experience.description}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-3 leading-relaxed text-sm md:text-base">{experience.description}</p>
+
+                {experience.highlight && (
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 dark:bg-green-900/20 border border-green-200/60 dark:border-green-800/40 text-green-700 dark:text-green-400 text-xs font-medium mb-3">
+                    <Icon icon="heroicons:arrow-trending-up" className="w-3.5 h-3.5 flex-shrink-0" />
+                    {experience.highlight}
+                  </div>
+                )}
 
                 {experience.skills && (
                   <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4">

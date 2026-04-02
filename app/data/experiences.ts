@@ -3,6 +3,7 @@ export interface Experience {
   period: string;
   position: string;
   description: string;
+  highlight?: string;
   tasks: string[];
   skills: string[];
   logo: string;
@@ -14,7 +15,7 @@ const experiences: Experience[] = [
     period: "2025 - present",
     position: "Principal Software Engineer",
     description:
-      "Modernize banking application wtih a cloud first, graph approach.",
+      "Leading platform modernization of a core banking application, migrating to a cloud-first GraphQL architecture on AWS with Kubernetes orchestration. Driving team velocity and engineering culture at a fast-moving consultancy.",
     tasks: [
       "Work with the PM's to scope and refine feature work.",
       "Lead Scrum ceremonies to improve team velocity.",
@@ -41,6 +42,7 @@ const experiences: Experience[] = [
     position: "Director of Engineering",
     description:
       "Elevate engineering expertise by orchestrating comprehensive training and collaborative working sessions on core systems. Strengthen monitoring and alerting by deploying InfluxDB and Grafana.",
+    highlight: "Reduced infra costs 20% via cloud-native re-architecture",
     tasks: [
       "Led a global engineering team to architect high-performance distributed systems.",
       "Reduced ingestion costs by 20% through cloud-native microservice re-architecture.",
@@ -67,6 +69,7 @@ const experiences: Experience[] = [
     position: "Software Engineering Manager",
     description:
       "Drove the end-to-end development of greenfield data portal, ensuring scalable architecture and seamless implementation. Built high-performance GraphQL API, streamlining access to complex datasets for faster data retrieval.",
+    highlight: "Cut cloud costs 45% · Dev cycles 75% faster",
     tasks: [
       "Spearheaded the development of a greenfield data portal, ensuring scalability and maintainability.",
       "Designed a GraphQL API for seamless data retrieval, reducing query time by 30%.",
@@ -83,6 +86,7 @@ const experiences: Experience[] = [
     position: "Senior Software Engineer",
     description:
       "Accelerated feature development for cutting-edge finance product by collaborating with small team of engineers. Improved usability by swiftly refining feature sets within small Pods. Managed code reviews, ensuring high-quality standards and maintaining code integrity.",
+    highlight: "Increased feature delivery speed 30%",
     tasks: [
       "Enhanced financial product usability by designing modular React components for improved customization.",
       "Increased feature delivery speed by 30% through agile sprints and streamlined deployment.",
@@ -118,7 +122,7 @@ const experiences: Experience[] = [
     logo: "pricespider_logo.jpeg",
   },
   {
-    company: "Cognizant",
+    company: "Softvision (now Cognizant)",
     period: "2018 - 2019",
     position: "Frontend Web Developer",
     description:
@@ -149,6 +153,7 @@ const experiences: Experience[] = [
     position: "Web Developer",
     description:
       "Drive product optimization and user engagement through data-driven experimentation and modern frontend architectures. Enhance performance and conversion rates by deploying A/B testing tools and migrating legacy applications to scalable, React-based solutions.",
+    highlight: "Boosted conversion rates 40%+ via A/B testing",
     tasks: [
       "Boosted conversion rates by over 40% via deployment of A/B testing tools.",
       "Led the migration of a legacy Java application to a modern architecture by developing a scalable Java API and React-based frontend, enhancing performance, maintainability, and user experience.",
