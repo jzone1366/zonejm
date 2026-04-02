@@ -20,20 +20,18 @@ export default function Skills() {
 	const categories = Object.keys(skillsByCategory).sort();
 
 	return (
-		<div className="space-y-4">
-			<div className="flex items-center gap-2 mb-4">
-				<div className="w-5 h-5 rounded bg-blue-50 dark:bg-blue-900/50 flex items-center justify-center">
-					<Icon icon="heroicons:code-bracket" className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-				</div>
-				<h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">Skills</h3>
+		<section id="skills" className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200/75 dark:border-gray-700 p-6 md:p-8 shadow-sm">
+			<div className="flex items-center gap-3 mb-6 md:mb-8">
+				<h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">Skills</h2>
+				<div className="flex-grow border-t border-gray-200 dark:border-gray-700"></div>
 			</div>
-			
-			<div className="space-y-4">
+
+			<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 				{categories.map((category) => (
-					<div key={category} className="space-y-2">
-						<h4 className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+					<div key={category}>
+						<h3 className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
 							{category}
-						</h4>
+						</h3>
 						<div className="flex flex-wrap gap-2">
 							{skillsByCategory[category].map((skill, index) => (
 								<div
@@ -56,7 +54,7 @@ export default function Skills() {
 			</div>
 
 			{/* Proficiency legend */}
-			<div className="flex items-center gap-4 pt-1 text-[10px] text-gray-500 dark:text-gray-400">
+			<div className="flex items-center gap-4 pt-4 mt-6 border-t border-gray-100 dark:border-gray-800 text-[10px] text-gray-500 dark:text-gray-400">
 				<div className="flex items-center gap-1.5">
 					<div className="w-3 border-l-2 border-l-blue-500 h-3 rounded-sm bg-gray-50 dark:bg-gray-800"></div>
 					<span>Expert</span>
@@ -70,6 +68,6 @@ export default function Skills() {
 					<span>Intermediate</span>
 				</div>
 			</div>
-		</div>
+		</section>
 	)
 }

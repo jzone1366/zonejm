@@ -10,6 +10,32 @@ export interface Experience {
 
 const experiences: Experience[] = [
   {
+    company: "Ten Mile Square",
+    period: "2025 - present",
+    position: "Principal Software Engineer",
+    description:
+      "Modernize banking application wtih a cloud first, graph approach.",
+    tasks: [
+      "Work with the PM's to scope and refine feature work.",
+      "Lead Scrum ceremonies to improve team velocity.",
+      "Maintain product timeline and communicate requirements clearly.",
+      "Mentor a cross functional team of engineers to increase productivity.",
+    ],
+    skills: [
+      "K8s",
+      "Python",
+      "Postgres",
+      "AWS",
+      "Angular",
+      "Typescript",
+      "Apollo",
+      "GraphQL",
+      "Claude Code",
+      "Open Code",
+    ],
+    logo: "tenmile_logo.jpeg",
+  },
+  {
     company: "QL2 Software",
     period: "2024 - 2025",
     position: "Director of Engineering",
@@ -22,7 +48,17 @@ const experiences: Experience[] = [
       "Developed and deployed an advanced ingestion tool, improving success rate by 10%.",
       "Enhanced incident management processes, reducing downtime and increasing system reliability.",
     ],
-    skills: ["Java", "K8s", "Python", "Postgres", "Go", "MongoDB", "AWS", "React", "JavaScript"],
+    skills: [
+      "Java",
+      "K8s",
+      "Python",
+      "Postgres",
+      "Go",
+      "MongoDB",
+      "AWS",
+      "React",
+      "JavaScript",
+    ],
     logo: "ql2_logo.jpeg",
   },
   {
@@ -135,4 +171,3 @@ const experiences: Experience[] = [
 ];
 
 export default experiences;
-

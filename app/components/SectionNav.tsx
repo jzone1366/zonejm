@@ -5,8 +5,9 @@ import { Icon } from '@iconify/react';
 
 const sections = [
 	{ id: 'experience', label: 'Experience', icon: 'heroicons:briefcase' },
+	{ id: 'skills', label: 'Skills', icon: 'heroicons:code-bracket' },
 	{ id: 'about', label: 'About', icon: 'heroicons:user' },
-	{ id: 'projects', label: 'Projects', icon: 'heroicons:code-bracket' },
+	{ id: 'projects', label: 'Projects', icon: 'heroicons:wrench-screwdriver' },
 ] as const;
 
 export default function SectionNav() {
@@ -25,8 +26,20 @@ export default function SectionNav() {
 			{ rootMargin: '-20% 0px -60% 0px' }
 		);
 
+		let footerEl: HTMLElement | null = null;
+		let footerVisible = false;
+
+		const footerObserver = new IntersectionObserver(
+			(entries) => {
+				footerVisible = entries[0]?.isIntersecting ?? false;
+				// Re-evaluate visibility when footer state changes
+				setIsVisible(window.scrollY > 300 && !footerVisible);
+			},
+			{ threshold: 0.1 }
+		);
+
 		const handleScroll = () => {
-			setIsVisible(window.scrollY > 300);
+			setIsVisible(window.scrollY > 300 && !footerVisible);
 		};
 
 		for (const section of sections) {
@@ -34,11 +47,15 @@ export default function SectionNav() {
 			if (el) observer.observe(el);
 		}
 
+		footerEl = document.querySelector('footer');
+		if (footerEl) footerObserver.observe(footerEl);
+
 		window.addEventListener('scroll', handleScroll, { passive: true });
 		handleScroll();
 
 		return () => {
 			observer.disconnect();
+			footerObserver.disconnect();
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);

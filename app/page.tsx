@@ -1,17 +1,13 @@
 import { Suspense } from "react";
 import Intro from "./components/Intro";
-import Details from "./components/Details";
-import Socials from "./components/Socials";
-import SidebarEducation from "./components/SidebarEducation";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import GithubStatsCard from "./components/GithubStats";
 import GithubProjects from "./components/GithubProjects";
 import About from "./components/About";
 import Footer from "./components/Footer";
-import SidebarToggle from "./components/SidebarToggle";
 import SectionNav from "./components/SectionNav";
-import ThemeToggle from "./components/ThemeToggle";
+import SidebarEducation from "./components/SidebarEducation";
 import IconProvider from "./components/IconProvider";
 import { fetchGithubData } from "./lib/github";
 
@@ -74,45 +70,28 @@ export default function Home() {
 				Skip to main content
 			</a>
 			<SectionNav />
-			<div className="container max-w-6xl mx-auto px-4 py-6 md:py-12">
-				<div className="flex flex-col lg:grid lg:grid-cols-[350px_1fr] xl:grid-cols-[400px_1fr] gap-6 lg:gap-8">
-					{/* Sidebar */}
-					<aside className="lg:sticky lg:top-8 lg:max-h-[calc(100vh-4rem)] lg:overflow-y-auto scrollbar-hide h-fit order-1 lg:order-none" aria-label="Profile sidebar">
-						<div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200/75 dark:border-gray-700 p-6 md:p-8 shadow-sm">
-							<div className="space-y-6 md:space-y-8">
-								<div className="flex justify-end -mb-4">
-									<ThemeToggle />
-								</div>
-								<Intro />
-								<SidebarToggle>
-									<div className="h-px bg-gray-100 dark:bg-gray-800"></div>
-									<Details />
-									<div className="h-px bg-gray-100 dark:bg-gray-800"></div>
-									<Socials />
-									<div className="h-px bg-gray-100 dark:bg-gray-800"></div>
-								<Skills />
-								<div className="h-px bg-gray-100 dark:bg-gray-800"></div>
-								<SidebarEducation />
-								<div className="h-px bg-gray-100 dark:bg-gray-800"></div>
-								<Suspense fallback={<GithubStatsLoading />}>
-										<GithubStatsSection />
-									</Suspense>
-								</SidebarToggle>
-							</div>
-						</div>
-					</aside>
 
-					{/* Main Content */}
-					<main id="main-content" className="space-y-6 md:space-y-8 order-2 lg:order-none">
-						<Experience />
-						<About />
-						<Suspense fallback={<GithubProjectsLoading />}>
-							<GithubProjectsSection />
+			<div className="max-w-4xl mx-auto px-4 py-6 md:py-12">
+				{/* Profile Header */}
+				<Intro />
+
+				{/* Main Content */}
+				<main id="main-content" className="space-y-6 md:space-y-8 mt-6 md:mt-8">
+					<Experience />
+					<Skills />
+					<About />
+					<Suspense fallback={<GithubProjectsLoading />}>
+						<GithubProjectsSection />
+					</Suspense>
+					<div className="grid gap-6 md:grid-cols-2">
+						<SidebarEducation />
+						<Suspense fallback={<GithubStatsLoading />}>
+							<GithubStatsSection />
 						</Suspense>
-					</main>
-				</div>
+					</div>
+				</main>
 			</div>
-			
+
 			<Footer />
 		</div>
 		</IconProvider>

@@ -69,12 +69,6 @@
     color: #111827 !important;
   }
 
-  /* Force single-column layout */
-  .lg\:grid-cols-\[350px_1fr\],
-  .xl\:grid-cols-\[400px_1fr\] {
-    grid-template-columns: 1fr !important;
-  }
-
   /* Hide interactive/dynamic elements */
   footer,
   nav[aria-label="Section navigation"],
@@ -83,16 +77,10 @@
   }
 
   /* Ensure proper layout for print */
-  .container {
+  .container,
+  .max-w-4xl {
     max-width: none !important;
     padding: 0 !important;
-  }
-
-  /* Remove sticky positioning */
-  .lg\:sticky {
-    position: static !important;
-    max-height: none !important;
-    overflow: visible !important;
   }
 
   /* Show URLs after external links */
