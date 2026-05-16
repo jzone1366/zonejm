@@ -1,18 +1,66 @@
-const experiences = [
+export interface Experience {
+  company: string;
+  period: string;
+  position: string;
+  description: string;
+  highlight?: string;
+  tasks: string[];
+  skills: string[];
+  logo: string;
+}
+
+const experiences: Experience[] = [
+  {
+    company: "Ten Mile Square",
+    period: "2025 - present",
+    position: "Principal Software Engineer",
+    description:
+      "Leading modernization of a Personal Loan Origination System, re-platforming a legacy COBOL mainframe application onto a TypeScript and AWS cloud-native architecture — designing scalable services, infrastructure, and workflows from the ground up.",
+    tasks: [
+      "Architected reusable TypeScript component library, standardizing UI across the origination platform and reducing feature development time for engineering teams.",
+      "Designed and implemented configurable loan workflow engine, streamlining the closing process and improving origination team efficiency.",
+      "Optimized CI/CD pipelines, reducing build and deployment time by 35% and enabling faster, more reliable releases.",
+      "Introduced Agile ceremonies and engineering best practices, improving sprint predictability and cross-team collaboration.",
+      "Defined AWS cloud infrastructure architecture (Lambda, API Gateway, RDS, S3), establishing scalable, secure patterns for the modernized platform.",
+      "Collaborated with business stakeholders and compliance teams to translate mainframe business logic into well-documented TypeScript services.",
+    ],
+    skills: [
+      "K8s",
+      "Python",
+      "Postgres",
+      "AWS",
+      "Angular",
+      "Typescript",
+      "Apollo",
+      "GraphQL",
+      "Claude Code",
+      "Open Code",
+    ],
+    logo: "tenmile_logo.jpeg",
+  },
   {
     company: "QL2 Software",
     period: "2024 - 2025",
     position: "Director of Engineering",
     description:
       "Elevate engineering expertise by orchestrating comprehensive training and collaborative working sessions on core systems. Strengthen monitoring and alerting by deploying InfluxDB and Grafana.",
+    highlight: "Reduced infra costs 20% via cloud-native re-architecture",
     tasks: [
-      "Led a global engineering team to architect high-performance distributed systems.",
-      "Reduced ingestion costs by 20% through cloud-native microservice re-architecture.",
-      "Implemented real-time monitoring with Snowflake & Python, ensuring data accuracy.",
-      "Developed and deployed an advanced ingestion tool, improving success rate by 10%.",
-      "Enhanced incident management processes, reducing downtime and increasing system reliability.",
+      "Reduced ingestion costs by 20% and lowered cloud expenses by over 50% by re-architecting the high-throughput data pipeline as cloud-native TypeScript microservices on AWS.",
+      "Accelerated pipeline processing speed by 75% through distributed systems reengineering; improved SAN resiliency with a 45% performance boost and cut latency by over 50%.",
+      "Built real-time data quality monitoring pipeline using AWS, Snowflake, and Python, processing millions of records with high accuracy across global data sources.",
     ],
-    skills: ["Java", "K8s", "Python", "Postgres", "Go", "MongoDB", "AWS", "React", "JavaScript"],
+    skills: [
+      "Java",
+      "K8s",
+      "Python",
+      "Postgres",
+      "Go",
+      "MongoDB",
+      "AWS",
+      "React",
+      "JavaScript",
+    ],
     logo: "ql2_logo.jpeg",
   },
   {
@@ -21,12 +69,11 @@ const experiences = [
     position: "Software Engineering Manager",
     description:
       "Drove the end-to-end development of greenfield data portal, ensuring scalable architecture and seamless implementation. Built high-performance GraphQL API, streamlining access to complex datasets for faster data retrieval.",
+    highlight: "Cut cloud costs 45% · Dev cycles 75% faster",
     tasks: [
-      "Spearheaded the development of a greenfield data portal, ensuring scalability and maintainability.",
-      "Designed a GraphQL API for seamless data retrieval, reducing query time by 30%.",
-      "Cut cloud infrastructure costs by 45% through architectural optimizations.",
-      "Accelerated development cycles by 75% by refining Agile workflows.",
-      "Led and mentored a team of engineers, fostering collaboration and technical excellence.",
+      "Shortened delivery cycles by over 75% through process optimization and enhanced product management strategies.",
+      "Cut cloud costs by 45% by restructuring the AWS data ingestion architecture for efficiency and scalability.",
+      "Boosted customer engagement by 60% through the development of an enhanced user interface using React.",
     ],
     skills: ["K8s", "Python", "Postgres", "React", "JavaScript", "Nest.js"],
     logo: "tealbook_logo.jpeg",
@@ -37,6 +84,7 @@ const experiences = [
     position: "Senior Software Engineer",
     description:
       "Accelerated feature development for cutting-edge finance product by collaborating with small team of engineers. Improved usability by swiftly refining feature sets within small Pods. Managed code reviews, ensuring high-quality standards and maintaining code integrity.",
+    highlight: "Increased feature delivery speed 30%",
     tasks: [
       "Enhanced financial product usability by designing modular React components for improved customization.",
       "Increased feature delivery speed by 30% through agile sprints and streamlined deployment.",
@@ -72,7 +120,7 @@ const experiences = [
     logo: "pricespider_logo.jpeg",
   },
   {
-    company: "Cognizant",
+    company: "Softvision (now Cognizant)",
     period: "2018 - 2019",
     position: "Frontend Web Developer",
     description:
@@ -103,6 +151,7 @@ const experiences = [
     position: "Web Developer",
     description:
       "Drive product optimization and user engagement through data-driven experimentation and modern frontend architectures. Enhance performance and conversion rates by deploying A/B testing tools and migrating legacy applications to scalable, React-based solutions.",
+    highlight: "Boosted conversion rates 40%+ via A/B testing",
     tasks: [
       "Boosted conversion rates by over 40% via deployment of A/B testing tools.",
       "Led the migration of a legacy Java application to a modern architecture by developing a scalable Java API and React-based frontend, enhancing performance, maintainability, and user experience.",
@@ -125,4 +174,3 @@ const experiences = [
 ];
 
 export default experiences;
-

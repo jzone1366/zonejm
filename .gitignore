@@ -42,3 +42,4 @@ next-env.d.ts
 
 # Build info (generated at build time)
 /app/build-info.json
+/app/icon-data.json

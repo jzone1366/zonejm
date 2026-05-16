@@ -1,56 +1,103 @@
 import Image from "next/image"
+import Link from "next/link"
+import { Icon } from "@iconify/react"
+import ThemeToggle from "./ThemeToggle"
+import { SOCIAL_URLS } from "../lib/constants"
+
+const socialLinks = [
+	{ href: SOCIAL_URLS.github, icon: 'simple-icons:github', label: 'GitHub' },
+	{ href: SOCIAL_URLS.linkedin, icon: 'simple-icons:linkedin', label: 'LinkedIn' },
+	{ href: SOCIAL_URLS.kaggle, icon: 'simple-icons:kaggle', label: 'Kaggle' },
+	{ href: SOCIAL_URLS.x, icon: 'simple-icons:x', label: 'X (Twitter)' },
+];
 
 export default function Intro() {
 	return (
-		<>
-			<div className="text-center">
-				<div className="flex justify-center items-center mb-6">
+		<header className="relative overflow-hidden bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-900 dark:to-blue-950 rounded-2xl border border-gray-200/75 dark:border-gray-800 p-6 md:p-8 shadow-sm dark:shadow-xl print:[background-image:none] print:bg-white print:border-gray-200">
+			{/* Dark mode depth overlay */}
+			<div className="absolute inset-0 hidden dark:block bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.15)_0%,_transparent_65%)] pointer-events-none print:hidden" aria-hidden="true" />
+
+			{/* Top row: profile info + theme toggle */}
+			<div className="relative flex items-start justify-between gap-4 mb-6">
+				<div className="flex items-start gap-4 md:gap-6 min-w-0">
 					<Image
 						src="/selfie.jpg"
-						alt="Image of Josh"
+						alt="Joshua Zone, Software Engineering Leader"
 						width={144}
 						height={144}
+						priority
 						itemProp="image"
-						className='rounded-2xl object-cover object-[center_20%] ring-4 ring-gray-50 shadow-lg w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36'
+						className="rounded-2xl object-cover object-[center_20%] ring-4 ring-gray-100 dark:ring-white/10 shadow-lg w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex-shrink-0"
 					/>
+					<div className="min-w-0">
+						<h1 itemProp="name" className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
+							Joshua Zone
+						</h1>
+						<p className="text-base sm:text-lg text-blue-600 dark:text-blue-400 font-medium mt-1">
+							Software Engineering Leader
+						</p>
+						<div className="flex flex-wrap gap-2 mt-3">
+							<span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200/75 dark:bg-white/10 dark:text-blue-300 dark:border-white/20">
+								10+ Years Experience
+							</span>
+							<span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-50 text-green-700 border border-green-200/75 dark:bg-white/10 dark:text-green-300 dark:border-white/20">
+								Principal Architect
+							</span>
+							<span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200/75 dark:bg-white/10 dark:text-purple-300 dark:border-white/20">
+								Director of Engineering
+							</span>
+						</div>
+						<a
+							href="/resume.pdf"
+							download
+							className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors shadow-sm mt-4"
+						>
+							<Icon icon="heroicons:document-arrow-down" className="w-4 h-4" />
+							Download Resume
+						</a>
+					</div>
 				</div>
-				<h1 itemProp="name" className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Joshua Zone</h1>
-				<h2 className="text-base sm:text-lg text-blue-600 font-medium mb-4 px-2">Software Engineering Leader</h2>
-				<div className="flex flex-wrap justify-center gap-2 mb-4">
-					<span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
-						10+ Years Experience
+				<ThemeToggle />
+			</div>
+
+			{/* Bio */}
+			<p className="relative text-sm md:text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+				I architect distributed systems that teams can actually ship on — and lead the engineering organizations that run them. Currently building cloud-native data infrastructure at Ten Mile Square; previously cut cloud costs 45% at TealBook and led platform engineering at QL2 across a global team.
+			</p>
+
+			{/* Contact bar + social links */}
+			<div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-5 border-t border-gray-100 dark:border-white/10">
+				{/* Contact info */}
+				<div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-gray-600 dark:text-gray-300">
+					<Link
+						href="mailto:jzone1229@gmail.com"
+						className="inline-flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+					>
+						<Icon icon="heroicons:envelope" className="w-4 h-4 text-gray-400 dark:text-gray-500" />
+						<span>jzone1229@gmail.com</span>
+					</Link>
+					<span className="inline-flex items-center gap-1.5">
+						<Icon icon="heroicons:map-pin" className="w-4 h-4 text-gray-400 dark:text-gray-500" />
+						<span>Atlanta, GA</span>
 					</span>
-					<span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-50 text-green-700">
-						Principal Architect
-					</span>
-					<span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700">
-						Director of Engineering
-					</span>
+				</div>
+
+				{/* Social links */}
+				<div className="flex items-center gap-1.5">
+					{socialLinks.map((link) => (
+						<Link
+							key={link.label}
+							href={link.href}
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label={`Visit ${link.label} profile`}
+							className="p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/10 transition-colors"
+						>
+							<Icon icon={link.icon} className="w-4 h-4" />
+						</Link>
+					))}
 				</div>
 			</div>
-			<div className="prose prose-sm max-w-none text-gray-600">
-				<p className="leading-relaxed text-sm sm:text-base mb-4">
-					Passionate about distributed systems, microservices, and cloud-native architecture. I lead cross-functional teams to build scalable solutions that drive business growth while fostering innovation and technical excellence.
-				</p>
-				<div className="grid grid-cols-2 gap-3 text-xs">
-					<div className="bg-gray-50 rounded-lg p-3 text-center">
-						<div className="font-semibold text-gray-900">45%</div>
-						<div className="text-gray-600">Cost Reduction</div>
-					</div>
-					<div className="bg-gray-50 rounded-lg p-3 text-center">
-						<div className="font-semibold text-gray-900">75%</div>
-						<div className="text-gray-600">Faster Delivery</div>
-					</div>
-					<div className="bg-gray-50 rounded-lg p-3 text-center">
-						<div className="font-semibold text-gray-900">30%</div>
-						<div className="text-gray-600">Performance Gain</div>
-					</div>
-					<div className="bg-gray-50 rounded-lg p-3 text-center">
-						<div className="font-semibold text-gray-900">20%</div>
-						<div className="text-gray-600">Cost Savings</div>
-					</div>
-				</div>
-			</div>
-		</>
+		</header>
 	)
 }

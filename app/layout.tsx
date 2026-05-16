@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { SOCIAL_URLS } from "./lib/constants";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://zonejm.netlify.app"),
   title: "Joshua Zone | Software Engineering Leader | Principal Architect",
   description: "Director of Engineering with 10+ years of experience in software engineering, system architecture, and technical leadership. Expert in distributed systems, microservices, cloud-native architecture, and API strategy.",
   keywords: [
@@ -27,6 +29,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Joshua Zone" }],
   creator: "Joshua Zone",
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-touch-icon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -51,9 +60,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code", // Add your actual verification code
-  },
 };
 
 const structuredData = {
@@ -64,9 +70,9 @@ const structuredData = {
   "description": "Director of Engineering with 10+ years of experience in software engineering, system architecture, and technical leadership.",
   "url": "https://zonejm.netlify.app",
   "sameAs": [
-    "https://linkedin.com/in/zonejm",
-    "https://github.com/jzone1366",
-    "https://x.com/jzone1366"
+    SOCIAL_URLS.linkedin,
+    SOCIAL_URLS.github,
+    SOCIAL_URLS.x,
   ],
   "knowsAbout": [
     "Software Engineering",
@@ -104,14 +110,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')}catch(e){}})()`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased bg-gray-50/50 dark:bg-gray-950 transition-colors`}>
         {children}
       </body>
     </html>
