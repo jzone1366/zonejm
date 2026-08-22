@@ -46,10 +46,10 @@ export default function Experience() {
                     {experience.position}
                   </span>
                 </div>
-                <DisclosureButton className="flex items-center gap-1 md:gap-2 px-2 md:px-3 py-1.5 rounded-lg text-xs md:text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900 transition-all duration-200 flex-shrink-0">
+                <DisclosureButton className="group/button flex items-center gap-1 md:gap-2 px-2 md:px-3 py-1.5 rounded-lg text-xs md:text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900 transition-all duration-200 flex-shrink-0">
                   <span className="hidden sm:inline">View Details</span>
                   <span className="sm:hidden">Details</span>
-                  <Icon icon="heroicons:chevron-down" className="w-4 h-4 transform transition-transform duration-200 ui-open:rotate-180" />
+                  <Icon icon="heroicons:chevron-down" className="w-4 h-4 transform transition-transform duration-200 group-data-[open]/button:rotate-180" />
                 </DisclosureButton>
               </div>
 
@@ -94,7 +94,7 @@ export default function Experience() {
                       </div>
                     ))}
                   </div>
-                  
+
                   {/* Show all skills in expanded view */}
                   {experience.skills && experience.skills.length > 8 && (
                     <div className="mt-4 pt-4 border-t border-gray-50 dark:border-gray-800">
